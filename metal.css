@@ -66,7 +66,7 @@
 .ms-hero__bg {
   position: absolute; inset: 0; z-index: 0;
   background:
-    url('images/metal-hero.jpg') center / cover no-repeat,
+    url('images/metal_bg.png') center / cover no-repeat,
     linear-gradient(160deg, #0D3B5E 0%, #071C30 50%, #04101A 100%);
   transform: scale(1.03);
 }
