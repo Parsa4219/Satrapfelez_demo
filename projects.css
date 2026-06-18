@@ -426,16 +426,91 @@
 /* =====================================================
    RESPONSIVE
 ===================================================== */
+
+/* ── 1100px ── */
 @media (max-width: 1100px) {
   .pj-grid { grid-template-columns: 1fr 1fr; }
   .pj-card--featured { grid-column: span 2; }
 }
 
+/* ── 768px ── */
 @media (max-width: 768px) {
+  /* ── Hero ── */
+  .projects-hero__stats { display: none; }
+  .projects-hero__content {
+    padding: calc(var(--nav-height) + 60px) 24px 80px;
+  }
+  .projects-hero__desc { margin-bottom: 28px; }
+  .projects-hero__ctas { gap: 12px; }
+  .projects-hero__scroll { bottom: 24px; }
+  .projects-breadcrumb {
+    inset-inline-end: 24px;
+    right: auto;
+  }
+
+  /* ── Filter bar: scrollable row ── */
+  .projects-filter__inner {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 0 16px;
+    /* اسکرول بار مخفی */
+  }
+  .projects-filter__inner::-webkit-scrollbar { display: none; }
+
+  /* icon ها مخفی، فقط label + count */
+  .pf-icon { display: none; }
+  .pf-live { top: 8px; left: 8px; }
+
+  .pf-btn {
+    padding: 14px 16px;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+    font-size: 0.7rem;
+  }
+  .pf-count { display: none; }
+
+  /* view toggle فشرده */
+  .pf-view {
+    margin-left: 0;
+    flex-shrink: 0;
+    padding: 0 12px;
+    border-left: 1px solid rgba(255,255,255,0.05);
+    gap: 6px;
+  }
+  .pf-view-lbl { display: none; }
+  .pf-sep { margin: 6px 0; }
+
+  /* ── Project grid ── */
   .pj-grid { grid-template-columns: 1fr; }
   .pj-card--featured { grid-column: span 1; }
-  .projects-hero__stats { display: none; }
-  .projects-hero__content { padding-bottom: 100px; }
-  .pf-btn { padding: 14px 20px; }
-  .projects-breadcrumb { right: 24px; }
+  .pj-card { min-height: 260px; }
+  .pj-card--featured { min-height: 300px; }
+
+  /* ── CTA band ── */
+  .projects-cta-band { padding: 60px 0; }
+  .projects-cta-band__btns { flex-direction: column; align-items: center; gap: 14px; }
+}
+
+/* ── 540px ── */
+@media (max-width: 540px) {
+  .projects-hero__title-bold {
+    font-size: clamp(2.2rem, 10vw, 2.8rem);
+  }
+  .projects-hero__tag { font-size: 0.6rem; padding: 6px 10px; }
+  .projects-hero__desc { font-size: 0.8rem; padding: 12px 14px; }
+
+  .pf-btn { padding: 12px 12px; font-size: 0.65rem; }
+
+  .pj-card { min-height: 220px; }
+  .pj-card--featured { min-height: 260px; }
+  .pj-card__title { font-size: 0.9rem; }
+  .pj-card--featured .pj-card__title { font-size: 1.1rem; }
+  .pj-card__overlay { padding: 20px 16px; }
+
+  .projects-cta-band__title { font-size: clamp(1.4rem, 6vw, 1.8rem); }
 }
