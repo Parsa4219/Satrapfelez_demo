@@ -302,7 +302,7 @@ body,a,button,input,textarea,select{cursor:none!important;}
 .hero__bg-photo{
   position:absolute;inset:0;z-index:0;
   background:
-    url('images/Template.jpg') center 30% / cover no-repeat,
+    url('images/Template2.png') center 30% / cover no-repeat,
     linear-gradient(160deg,#0D3B5E 0%,#071C30 40%,#04101A 100%);
   transform:scale(1.04);
   transition:transform 2s cubic-bezier(0.16,1,0.3,1);
