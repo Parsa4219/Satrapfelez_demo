@@ -389,9 +389,16 @@ const isMobile = () => window.matchMedia('(max-width: 768px)').matches;
    CURSOR
 ───────────────────────────────────────────── */
 (function initCursor() {
-  const pickbox   = qs('.autocad-cursor__pickbox');
-  const crosshair = qs('.autocad-cursor__crosshair');
-  if (!pickbox || !crosshair || isMobile()) return;
+  // اگه touch device باشه یا hover نداشته باشه، کرسر نمی‌خوایم
+  if (window.matchMedia('(hover: none), (pointer: coarse)').matches) return;
+
+  // المان‌های کرسر رو inject می‌کنیم
+  const crosshair = document.createElement('div');
+  crosshair.className = 'autocad-cursor__crosshair';
+  const pickbox = document.createElement('div');
+  pickbox.className = 'autocad-cursor__pickbox';
+  document.body.appendChild(crosshair);
+  document.body.appendChild(pickbox);
 
   let isClicking = false;
 
@@ -618,41 +625,63 @@ document.addEventListener('mousemove', e => {
 })();
 
 /* ─────────────────────────────────────────────
-   HAMBURGER MENU
+   PREMIUM MOBILE MENU
 ───────────────────────────────────────────── */
 (function initHamburger() {
   const nav = qs('#mainNav');
   if (!nav) return;
 
+  // inject دکمه
   const btn = document.createElement('button');
   btn.className = 'nav__hamburger';
-  btn.setAttribute('aria-label', 'منو');
+  btn.setAttribute('aria-label', 'باز کردن منو');
+  btn.setAttribute('aria-expanded', 'false');
   btn.innerHTML = '<span></span><span></span><span></span>';
   nav.appendChild(btn);
 
   const links = qs('.nav__links', nav);
   if (!links) return;
 
-  btn.addEventListener('click', () => {
-    const isOpen = links.classList.toggle('mobile-open');
-    btn.classList.toggle('open', isOpen);
-    btn.setAttribute('aria-expanded', isOpen);
-    document.body.style.overflow = isOpen ? 'hidden' : '';
+  function openMenu() {
+    links.classList.add('mobile-open');
+    btn.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+    btn.setAttribute('aria-label', 'بستن منو');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    links.classList.remove('mobile-open');
+    btn.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-label', 'باز کردن منو');
+    document.body.style.overflow = '';
+  }
+
+  btn.addEventListener('click', e => {
+    e.stopPropagation();
+    links.classList.contains('mobile-open') ? closeMenu() : openMenu();
   });
 
+  // بستن با کلیک روی لینک
   links.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      links.classList.remove('mobile-open');
-      btn.classList.remove('open');
-      document.body.style.overflow = '';
-    });
+    a.addEventListener('click', closeMenu);
   });
 
+  // بستن با کلیک خارج
   document.addEventListener('click', e => {
-    if (!nav.contains(e.target)) {
-      links.classList.remove('mobile-open');
-      btn.classList.remove('open');
-      document.body.style.overflow = '';
+    if (links.classList.contains('mobile-open') && !nav.contains(e.target)) {
+      closeMenu();
     }
   });
+
+  // بستن با Escape
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeMenu();
+  });
+
+  // resize: بستن اگه صفحه بزرگ شد
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) closeMenu();
+  }, { passive: true });
 })();
