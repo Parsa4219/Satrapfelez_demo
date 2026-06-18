@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>سازه‌های بتنی | ساتراپ فلز</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="concrete.css" />
+</head>
+<body>
+
+  <!-- CUSTOM CURSOR -->
+  <div class="autocad-cursor__crosshair"></div>
+  <div class="autocad-cursor__pickbox"></div>
+
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress">
+    <div class="scroll-progress__bar" id="scrollBar"></div>
+  </div>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="nav" id="mainNav">
+    <ul class="nav__links">
+      <li><a href="#contact" class="nav__cta"><span>تماس با ما</span></a></li>
+      <li><a href="index.html">صفحه اصلی</a></li>
+      <li><a href="metal-structure.html">سازه‌های فلزی</a></li>
+      <li><a href="#" style="color:var(--yellow)">سازه‌های بتنی</a></li>
+        <li><a href="projects.html">پروژه‌ها</a></li>
+      <li><a href="#">وبلاگ</a></li>
+    </ul>
+    <div class="nav__logo">
+      <img
+        src="images/RTL_LOGO_transparent.png"
+        alt="ساتراپ فلز"
+        class="nav__logo-img"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+      >
+      <div class="nav__logo-mark" style="display:none;">
+        <svg viewBox="0 0 24 24"><path d="M3 21h18M3 7l9-4 9 4M4 7v14M20 7v14M8 7v14M16 7v14M12 3v18M8 11h8M8 15h8"/></svg>
+      </div>
+      <div class="nav__logo-text">
+        <span class="nav__logo-name">ساتراپ فلز</span>
+        <span class="nav__logo-sub">Satrap Felez Co.</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== PAGE HERO ========== -->
+  <section class="cs-hero" id="hero">
+    <div class="hero__bg-photo cs-hero__bg"></div>
+    <div class="hero__bg-overlay cs-hero__overlay"></div>
+    <div class="hero__bg-grid"></div>
+    <div class="cs-hero__particles">
+      <!-- decorative concrete texture dots -->
+      <span></span><span></span><span></span>
+      <span></span><span></span><span></span>
+    </div>
+
+    <!-- breadcrumb -->
+    <div class="cs-breadcrumb">
+      <a href="index.html">خانه</a>
+      <span class="cs-breadcrumb__sep">
+        <svg viewBox="0 0 16 16" fill="none"><polyline points="10,4 6,8 10,12" stroke="currentColor" stroke-width="1.5"/></svg>
+      </span>
+      <span>سازه‌های بتنی</span>
+    </div>
+
+    <div class="cs-hero__content">
+      <div class="cs-hero__tag reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="3" y="3" width="18" height="18" rx="2"/>
+          <line x1="3" y1="9" x2="21" y2="9"/>
+          <line x1="3" y1="15" x2="21" y2="15"/>
+          <line x1="9" y1="3" x2="9" y2="21"/>
+          <line x1="15" y1="3" x2="15" y2="21"/>
+        </svg>
+        تخصص ما در سازه‌های بتنی
+      </div>
+      <h1 class="cs-hero__title reveal">
+        <span class="cs-hero__title-light">بتن، پایه‌ای</span>
+        <span class="cs-hero__title-bold">برای ابدیت</span>
+      </h1>
+      <p class="cs-hero__desc reveal">
+        از فونداسیون‌های عمیق تا ساختمان‌های بلندمرتبه بتن مسلح — با فناوری قالب‌بندی مدرن و تیم محاسباتی ساتراپ، هر پروژه را با استحکام و دقت می‌سازیم.
+      </p>
+      <div class="cs-hero__ctas reveal">
+        <a href="#contact" class="cs-btn-primary">
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+          درخواست مشاوره
+        </a>
+        <a href="#types" class="cs-btn-ghost">
+          انواع سازه‌ها
+          <svg viewBox="0 0 24 24"><polyline points="6,9 12,15 18,9"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- floating spec badges -->
+    <div class="cs-hero__specs">
+      <div class="cs-spec-badge">
+        <div class="cs-spec-badge__val">C25</div>
+        <div class="cs-spec-badge__lbl">تا C50 — رده بتن</div>
+      </div>
+      <div class="cs-spec-badge">
+        <div class="cs-spec-badge__val">ACI</div>
+        <div class="cs-spec-badge__lbl">318 · AISC</div>
+      </div>
+      <div class="cs-spec-badge">
+        <div class="cs-spec-badge__val">۲۸۰۰</div>
+        <div class="cs-spec-badge__lbl">استاندارد زلزله ایران</div>
+      </div>
+    </div>
+
+    <div class="hero__scroll-cue cs-scroll-cue">
+      <div class="cs-scroll-line"></div>
+      <span class="hero__scroll-label">اسکرول</span>
+    </div>
+  </section>
+
+  <!-- ========== INTRO ========== -->
+  <section class="cs-intro">
+    <div class="container">
+      <div class="cs-intro__grid">
+        <div class="cs-intro__text reveal">
+          <div class="section-label">چرا بتن؟</div>
+          <h2 class="section-title">ماده‌ای که <span>زمان را</span> تحمل می‌کند</h2>
+          <p class="cs-intro__body">
+            بتن مسلح با ترکیب مقاومت فشاری بالا و انعطاف‌پذیری فولاد تقویتی، برای هر نوع بار ثقلی، لرزه‌ای و محیطی راه‌حلی قابل اتکا ارائه می‌دهد. دوام صد ساله، قابلیت شکل‌پذیری بی‌نظیر و هزینه نگهداری صفر — این است چرایی انتخاب بتن.
+          </p>
+          <div class="cs-intro__feats">
+            <div class="cs-intro__feat">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="20,6 9,17 4,12"/></svg>
+              مقاومت فشاری تا ۵۰ مگاپاسکال
+            </div>
+            <div class="cs-intro__feat">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="20,6 9,17 4,12"/></svg>
+              مقاومت بالا در برابر آتش و خوردگی
+            </div>
+            <div class="cs-intro__feat">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="20,6 9,17 4,12"/></svg>
+              هزینه نگهداری بسیار پایین
+            </div>
+            <div class="cs-intro__feat">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="20,6 9,17 4,12"/></svg>
+              انعطاف در طراحی معماری
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-intro__visual reveal reveal-delay-1">
+          <!-- Concrete section schematic SVG -->
+          <div class="cs-intro__drawing">
+            <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- background grid -->
+              <defs>
+                <pattern id="cgrid" width="20" height="20" patternUnits="userSpaceOnUse">
+                  <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(180,140,80,0.07)" stroke-width="0.5"/>
+                </pattern>
+              </defs>
+              <rect width="400" height="300" fill="url(#cgrid)"/>
+
+              <!-- Column cross-section -->
+              <rect x="50" y="50" width="120" height="120" fill="rgba(180,140,80,0.08)" stroke="rgba(180,140,80,0.5)" stroke-width="1.5"/>
+              <!-- rebars in column -->
+              <circle cx="68" cy="68" r="5" fill="rgba(180,140,80,0.3)" stroke="rgba(180,140,80,0.7)" stroke-width="1"/>
+              <circle cx="152" cy="68" r="5" fill="rgba(180,140,80,0.3)" stroke="rgba(180,140,80,0.7)" stroke-width="1"/>
+              <circle cx="68" cy="152" r="5" fill="rgba(180,140,80,0.3)" stroke="rgba(180,140,80,0.7)" stroke-width="1"/>
+              <circle cx="152" cy="152" r="5" fill="rgba(180,140,80,0.3)" stroke="rgba(180,140,80,0.7)" stroke-width="1"/>
+              <circle cx="110" cy="68" r="5" fill="rgba(180,140,80,0.3)" stroke="rgba(180,140,80,0.7)" stroke-width="1"/>
+              <circle cx="110" cy="152" r="5" fill="rgba(180,140,80,0.3)" stroke="rgba(180,140,80,0.7)" stroke-width="1"/>
+              <circle cx="68" cy="110" r="5" fill="rgba(180,140,80,0.3)" stroke="rgba(180,140,80,0.7)" stroke-width="1"/>
+              <circle cx="152" cy="110" r="5" fill="rgba(180,140,80,0.3)" stroke="rgba(180,140,80,0.7)" stroke-width="1"/>
+              <!-- stirrup -->
+              <rect x="58" y="58" width="104" height="104" fill="none" stroke="rgba(180,140,80,0.4)" stroke-width="1" stroke-dasharray="3,3"/>
+              <!-- label -->
+              <text x="110" y="185" fill="rgba(180,140,80,0.45)" font-size="7" text-anchor="middle" font-family="monospace">COLUMN — 400×400</text>
+
+              <!-- Beam section -->
+              <rect x="230" y="30" width="140" height="80" fill="rgba(120,160,200,0.08)" stroke="rgba(120,160,200,0.45)" stroke-width="1.5"/>
+              <!-- tension rebars bottom -->
+              <circle cx="252" cy="94" r="5" fill="rgba(120,160,200,0.3)" stroke="rgba(120,160,200,0.7)" stroke-width="1"/>
+              <circle cx="276" cy="94" r="5" fill="rgba(120,160,200,0.3)" stroke="rgba(120,160,200,0.7)" stroke-width="1"/>
+              <circle cx="324" cy="94" r="5" fill="rgba(120,160,200,0.3)" stroke="rgba(120,160,200,0.7)" stroke-width="1"/>
+              <circle cx="348" cy="94" r="5" fill="rgba(120,160,200,0.3)" stroke="rgba(120,160,200,0.7)" stroke-width="1"/>
+              <!-- comp rebars top -->
+              <circle cx="252" cy="46" r="4" fill="rgba(120,160,200,0.2)" stroke="rgba(120,160,200,0.5)" stroke-width="1"/>
+              <circle cx="348" cy="46" r="4" fill="rgba(120,160,200,0.2)" stroke="rgba(120,160,200,0.5)" stroke-width="1"/>
+              <!-- stirrup beam -->
+              <rect x="242" y="38" width="116" height="64" fill="none" stroke="rgba(120,160,200,0.3)" stroke-width="1" stroke-dasharray="3,3"/>
+              <text x="300" y="130" fill="rgba(120,160,200,0.4)" font-size="7" text-anchor="middle" font-family="monospace">BEAM — 300×500</text>
+
+              <!-- Slab strip -->
+              <rect x="230" y="165" width="140" height="30" fill="rgba(180,140,80,0.06)" stroke="rgba(180,140,80,0.4)" stroke-width="1.5"/>
+              <line x1="246" y1="175" x2="356" y2="175" stroke="rgba(180,140,80,0.35)" stroke-width="1" stroke-dasharray="6,4"/>
+              <line x1="246" y1="183" x2="356" y2="183" stroke="rgba(180,140,80,0.35)" stroke-width="1" stroke-dasharray="6,4"/>
+              <text x="300" y="213" fill="rgba(180,140,80,0.4)" font-size="7" text-anchor="middle" font-family="monospace">SLAB — t=200mm</text>
+
+              <!-- dimension marks -->
+              <line x1="20" y1="50" x2="20" y2="170" stroke="rgba(255,255,255,0.12)" stroke-width="0.8"/>
+              <line x1="16" y1="50" x2="24" y2="50" stroke="rgba(255,255,255,0.12)" stroke-width="0.8"/>
+              <line x1="16" y1="170" x2="24" y2="170" stroke="rgba(255,255,255,0.12)" stroke-width="0.8"/>
+              <text x="12" y="115" fill="rgba(255,255,255,0.2)" font-size="7" text-anchor="middle" font-family="monospace" transform="rotate(-90,12,115)">400mm</text>
+
+              <!-- Title -->
+              <text x="200" y="285" fill="rgba(180,140,80,0.4)" font-size="7.5" text-anchor="middle" font-family="monospace">SATRAP — CONCRETE SECTION DETAIL</text>
+            </svg>
+            <div class="cs-intro__drawing-label">جزئیات مقطع — ستون، تیر و دال</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== STRUCTURE TYPES ========== -->
+  <section class="cs-types" id="types">
+    <div class="container">
+      <div class="cs-types__header reveal">
+        <div class="section-label">دامنه خدمات</div>
+        <h2 class="section-title">انواع <span>سازه‌های بتنی</span></h2>
+      </div>
+      <div class="cs-types__grid">
+
+        <div class="cs-type-card reveal">
+          <div class="cs-type-card__icon">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4">
+              <rect x="4" y="6" width="24" height="22" rx="1"/>
+              <line x1="4" y1="12" x2="28" y2="12"/>
+              <line x1="4" y1="18" x2="28" y2="18"/>
+              <line x1="4" y1="24" x2="28" y2="24"/>
+              <line x1="10" y1="6" x2="10" y2="28"/>
+              <line x1="16" y1="6" x2="16" y2="28"/>
+              <line x1="22" y1="6" x2="22" y2="28"/>
+              <path d="M4 6 L16 2 L28 6"/>
+            </svg>
+          </div>
+          <div class="cs-type-card__num">۰۱</div>
+          <h3 class="cs-type-card__title">ساختمان‌های بتن مسلح</h3>
+          <p class="cs-type-card__desc">اسکلت بتنی چندطبقه برای کاربری مسکونی، تجاری و اداری با طراحی لرزه‌ای بر اساس آیین‌نامه ۲۸۰۰.</p>
+          <div class="cs-type-card__tag">RC Building</div>
+        </div>
+
+        <div class="cs-type-card reveal reveal-delay-1">
+          <div class="cs-type-card__icon">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4">
+              <path d="M4 28 L4 10 L16 4 L28 10 L28 28"/>
+              <line x1="4" y1="28" x2="28" y2="28"/>
+              <rect x="10" y="16" width="12" height="12"/>
+              <line x1="10" y1="10" x2="16" y2="6"/>
+              <line x1="22" y1="10" x2="16" y2="6"/>
+            </svg>
+          </div>
+          <div class="cs-type-card__num">۰۲</div>
+          <h3 class="cs-type-card__title">فونداسیون و شمع</h3>
+          <p class="cs-type-card__desc">طراحی و اجرای پی‌های گسترده، نواری، شمع‌کوبی و میکروپایل برای انواع بارگذاری و خاک‌های ضعیف.</p>
+          <div class="cs-type-card__tag">Foundation</div>
+        </div>
+
+        <div class="cs-type-card reveal reveal-delay-2">
+          <div class="cs-type-card__icon">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4">
+              <path d="M4 28 Q16 10 28 28"/>
+              <line x1="4" y1="28" x2="28" y2="28"/>
+              <line x1="10" y1="24" x2="10" y2="28"/>
+              <line x1="16" y1="17" x2="16" y2="28"/>
+              <line x1="22" y1="24" x2="22" y2="28"/>
+              <path d="M7 22 Q16 12 25 22" stroke-dasharray="3,3" stroke="rgba(180,140,80,0.5)"/>
+            </svg>
+          </div>
+          <div class="cs-type-card__num">۰۳</div>
+          <h3 class="cs-type-card__title">پل‌های بتنی</h3>
+          <p class="cs-type-card__desc">پل‌های خمیده، قوسی و تیرریزی بتن پیش‌تنیده برای گذرگاه‌های جاده‌ای، شهری و ریلی.</p>
+          <div class="cs-type-card__tag">Concrete Bridge</div>
+        </div>
+
+        <div class="cs-type-card reveal reveal-delay-3">
+          <div class="cs-type-card__icon">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4">
+              <rect x="6" y="4" width="20" height="6" rx="1"/>
+              <rect x="8" y="10" width="16" height="5"/>
+              <rect x="6" y="15" width="20" height="6" rx="1"/>
+              <rect x="4" y="21" width="24" height="7" rx="1"/>
+              <line x1="12" y1="4" x2="12" y2="28"/>
+              <line x1="20" y1="4" x2="20" y2="28"/>
+            </svg>
+          </div>
+          <div class="cs-type-card__num">۰۴</div>
+          <h3 class="cs-type-card__title">دیوار برشی و هسته مرکزی</h3>
+          <p class="cs-type-card__desc">سیستم‌های مقاوم جانبی برای ساختمان‌های بلند: دیوار برشی بتنی، هسته مرکزی و قاب دوگانه.</p>
+          <div class="cs-type-card__tag">Shear Wall</div>
+        </div>
+
+        <div class="cs-type-card reveal">
+          <div class="cs-type-card__icon">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4">
+              <ellipse cx="16" cy="22" rx="12" ry="4"/>
+              <line x1="4" y1="22" x2="4" y2="10"/>
+              <line x1="28" y1="22" x2="28" y2="10"/>
+              <ellipse cx="16" cy="10" rx="12" ry="4"/>
+              <line x1="16" y1="6" x2="16" y2="4"/>
+              <line x1="10" y1="7" x2="8" y2="5"/>
+              <line x1="22" y1="7" x2="24" y2="5"/>
+            </svg>
+          </div>
+          <div class="cs-type-card__num">۰۵</div>
+          <h3 class="cs-type-card__title">مخازن و سیلوها</h3>
+          <p class="cs-type-card__desc">مخازن آب زمینی و هوایی، استخرهای بتنی، سیلوهای دانه‌بندی و تانک‌های تصفیه‌خانه.</p>
+          <div class="cs-type-card__tag">Tank & Silo</div>
+        </div>
+
+        <div class="cs-type-card reveal reveal-delay-1">
+          <div class="cs-type-card__icon">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4">
+              <path d="M4 28 L4 16 L10 8 L22 8 L28 16 L28 28"/>
+              <line x1="4" y1="28" x2="28" y2="28"/>
+              <line x1="4" y1="20" x2="28" y2="20"/>
+              <rect x="12" y="20" width="8" height="8"/>
+              <line x1="10" y1="8" x2="10" y2="20"/>
+              <line x1="22" y1="8" x2="22" y2="20"/>
+            </svg>
+          </div>
+          <div class="cs-type-card__num">۰۶</div>
+          <h3 class="cs-type-card__title">تونل و زیرسازه</h3>
+          <p class="cs-type-card__desc">پوشش تونل، سازه‌های زیرزمینی، زیرگذرها و دیوار نگهبان بتنی در پروژه‌های شهری و عمرانی.</p>
+          <div class="cs-type-card__tag">Underground</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROCESS ========== -->
+  <section class="cs-process" id="process">
+    <div class="cs-process__bg-strip"></div>
+    <div class="container">
+      <div class="cs-process__header reveal">
+        <div class="section-label">فرآیند اجرا</div>
+        <h2 class="section-title">از <span>خاک</span> تا <span>سقف</span></h2>
+      </div>
+      <div class="cs-process__steps">
+
+        <div class="cs-step reveal">
+          <div class="cs-step__connector"></div>
+          <div class="cs-step__circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <div class="cs-step__body">
+            <div class="cs-step__num">۱</div>
+            <h4 class="cs-step__title">مطالعات ژئوتکنیک</h4>
+            <p class="cs-step__desc">حفاری گمانه، آزمایش SPT، تحلیل مکانیک خاک و تعیین ظرفیت باربری برای انتخاب نوع پی.</p>
+          </div>
+        </div>
+
+        <div class="cs-step reveal reveal-delay-1">
+          <div class="cs-step__connector"></div>
+          <div class="cs-step__circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="3" x2="9" y2="21"/></svg>
+          </div>
+          <div class="cs-step__body">
+            <div class="cs-step__num">۲</div>
+            <h4 class="cs-step__title">طراحی و محاسبات</h4>
+            <p class="cs-step__desc">مدل‌سازی با ETABS / SAP2000، طراحی آرماتورگذاری، کنترل لرزه‌ای و تهیه نقشه‌های اجرایی.</p>
+          </div>
+        </div>
+
+        <div class="cs-step reveal reveal-delay-2">
+          <div class="cs-step__connector"></div>
+          <div class="cs-step__circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 17l6-6 4 4 6-8"/></svg>
+          </div>
+          <div class="cs-step__body">
+            <div class="cs-step__num">۳</div>
+            <h4 class="cs-step__title">قالب‌بندی و آرماتور</h4>
+            <p class="cs-step__desc">اجرای قالب‌بندی مدرن (سیستم پری و فرا)، برش و خم آرماتور CNC و کنترل پوشش بتن.</p>
+          </div>
+        </div>
+
+        <div class="cs-step reveal reveal-delay-3">
+          <div class="cs-step__connector"></div>
+          <div class="cs-step__circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2z"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <div class="cs-step__body">
+            <div class="cs-step__num">۴</div>
+            <h4 class="cs-step__title">بتن‌ریزی و عمل‌آوری</h4>
+            <p class="cs-step__desc">بتن‌ریزی با پمپ، ویبراتور مکانیکی، کنترل اسلامپ و عمل‌آوری مرطوب ۲۸ روزه طبق ACI 308.</p>
+          </div>
+        </div>
+
+        <div class="cs-step reveal">
+          <div class="cs-step__connector cs-step__connector--last"></div>
+          <div class="cs-step__circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="20,6 9,17 4,12"/></svg>
+          </div>
+          <div class="cs-step__body">
+            <div class="cs-step__num">۵</div>
+            <h4 class="cs-step__title">آزمون و تحویل</h4>
+            <p class="cs-step__desc">آزمون مغزه‌گیری، اسکلروسکوپ و بار آزمایشی، تحویل با گزارش کامل کیفیت و گارانتی سازه.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SPECS / MIX DESIGN ========== -->
+  <section class="cs-specs-section" id="specs">
+    <div class="container">
+      <div class="cs-specs-section__header reveal">
+        <div class="section-label">مشخصات فنی</div>
+        <h2 class="section-title">توانمندی‌های <span>فنی ما</span></h2>
+      </div>
+
+      <div class="cs-caps-grid">
+        <div class="cs-cap reveal">
+          <div class="cs-cap__icon">
+            <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 24 L14 4 L24 24"/><line x1="8" y1="18" x2="20" y2="18"/></svg>
+          </div>
+          <div class="cs-cap__val">C50<span>‌</span></div>
+          <div class="cs-cap__lbl">بالاترین رده بتن اجرایی</div>
+        </div>
+        <div class="cs-cap reveal reveal-delay-1">
+          <div class="cs-cap__icon">
+            <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="14" cy="14" r="10"/><path d="M14 8v6l4 2"/></svg>
+          </div>
+          <div class="cs-cap__val">۲۸<span>روز</span></div>
+          <div class="cs-cap__lbl">دوره عمل‌آوری استاندارد</div>
+        </div>
+        <div class="cs-cap reveal reveal-delay-2">
+          <div class="cs-cap__icon">
+            <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="5" y="8" width="18" height="15" rx="2"/><path d="M9 8V6a5 5 0 0110 0v2"/></svg>
+          </div>
+          <div class="cs-cap__val">۱۰۰<span>+</span></div>
+          <div class="cs-cap__lbl">پروژه بتنی اجراشده</div>
+        </div>
+        <div class="cs-cap reveal reveal-delay-3">
+          <div class="cs-cap__icon">
+            <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M14 4 L24 10 L24 20 L14 26 L4 20 L4 10 Z"/><polyline points="9,14 12,17 19,10"/></svg>
+          </div>
+          <div class="cs-cap__val">ACI<span>‌</span></div>
+          <div class="cs-cap__lbl">318 · 301 · 308</div>
+        </div>
+      </div>
+
+      <!-- Mix design table -->
+      <div class="cs-table-wrap reveal">
+        <div class="cs-table-label">طرح اختلاط رایج بر اساس رده بتن</div>
+        <table class="cs-table">
+          <thead>
+            <tr>
+              <th>رده بتن</th>
+              <th>مقاومت فشاری (MPa)</th>
+              <th>نسبت آب/سیمان</th>
+              <th>کاربرد</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>C25</td>
+              <td>25</td>
+              <td>0.55</td>
+              <td>کف‌سازی، دیوار غیرسازه‌ای</td>
+            </tr>
+            <tr>
+              <td>C30</td>
+              <td>30</td>
+              <td>0.50</td>
+              <td>ستون، تیر، دال معمولی</td>
+            </tr>
+            <tr>
+              <td>C35</td>
+              <td>35</td>
+              <td>0.45</td>
+              <td>پی، دیوار برشی، پل</td>
+            </tr>
+            <tr>
+              <td>C50 (SCC)</td>
+              <td>50</td>
+              <td>0.38</td>
+              <td>سازه‌های ویژه، پیش‌تنیده</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SAMPLE PROJECTS ========== -->
+  <section class="cs-projects" id="projects">
+    <div class="container">
+      <div class="cs-projects__header reveal">
+        <div class="section-label">نمونه پروژه‌ها</div>
+        <h2 class="section-title">ساخته‌هایی که <span>ماندگارند</span></h2>
+      </div>
+      <div class="cs-projects__grid">
+
+        <div class="cs-proj-card cs-proj-card--featured reveal">
+          <div class="cs-proj-card__img cs-proj-card__img--1"></div>
+          <div class="cs-proj-card__overlay">
+            <div class="cs-proj-card__cat">ساختمان بتنی</div>
+            <h3 class="cs-proj-card__title">مجتمع مسکونی ۲۰ طبقه شیراز</h3>
+            <div class="cs-proj-card__meta">
+              <span>۲۰ طبقه</span>
+              <span>•</span>
+              <span>C35 — قاب دوگانه</span>
+              <span>•</span>
+              <span>شیراز</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-proj-card reveal reveal-delay-1">
+          <div class="cs-proj-card__img cs-proj-card__img--2"></div>
+          <div class="cs-proj-card__overlay">
+            <div class="cs-proj-card__cat">مخزن بتنی</div>
+            <h3 class="cs-proj-card__title">مخزن آب ۵۰۰۰ متری اصفهان</h3>
+            <div class="cs-proj-card__meta">
+              <span>۵۰۰۰ م‌مکعب</span>
+              <span>•</span>
+              <span>اصفهان</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-proj-card reveal reveal-delay-2">
+          <div class="cs-proj-card__img cs-proj-card__img--3"></div>
+          <div class="cs-proj-card__overlay">
+            <div class="cs-proj-card__cat">پل بتنی</div>
+            <h3 class="cs-proj-card__title">پل بزرگراه قدس تهران</h3>
+            <div class="cs-proj-card__meta">
+              <span>دهانه ۳۶ متر</span>
+              <span>•</span>
+              <span>تهران</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="cs-projects__cta reveal">
+        <a href="index.html#projects" class="cs-btn-ghost">
+          مشاهده همه پروژه‌ها
+          <svg viewBox="0 0 24 24"><polyline points="6,9 12,15 18,9"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__brand-logo">
+            <div class="footer__brand-logo-mark">
+              <svg viewBox="0 0 24 24" fill="white"><path d="M3 21h18M3 7l9-4 9 4M4 7v14M20 7v14M8 7v14M16 7v14M12 3v18M8 11h8M8 15h8"/></svg>
+            </div>
+            <div>
+              <div class="footer__brand-name">ساتراپ فلز</div>
+              <div class="footer__brand-sub">Satrap Felez Co.</div>
+            </div>
+          </div>
+          <p class="footer__tagline">سازنده آینده‌ای پایدار با فولاد و بتن، از ایران برای جهان.</p>
+          <div class="footer__social">
+            <a href="#" aria-label="اینستاگرام"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="#" aria-label="لینکدین"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="#" aria-label="تلگرام"><svg viewBox="0 0 24 24"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">دسترسی سریع</div>
+          <ul class="footer__links">
+            <li><a href="index.html">صفحه اصلی</a></li>
+            <li><a href="#types">انواع سازه</a></li>
+            <li><a href="#process">فرآیند اجرا</a></li>
+            <li><a href="#projects">نمونه پروژه‌ها</a></li>
+            <li><a href="metal-structure.html">سازه‌های فلزی</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer__col-title">خدمات ما</div>
+          <ul class="footer__links">
+            <li><a href="#">طراحی سازه بتنی</a></li>
+            <li><a href="#">قالب‌بندی مدرن</a></li>
+            <li><a href="#">بتن‌ریزی تخصصی</a></li>
+            <li><a href="#">مطالعات ژئوتکنیک</a></li>
+            <li><a href="#">مشاوره فنی</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer__col-title">ارتباط با ما</div>
+          <div class="footer__contact-item">
+            <div class="footer__contact-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.62A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg></div>
+            <div>
+              <div class="footer__contact-label">تلفن تماس</div>
+              <div class="footer__contact-val" style="direction:ltr;text-align:right;">۰۳۱ - ۳۴۵۶۷۸۹۰</div>
+            </div>
+          </div>
+          <div class="footer__contact-item">
+            <div class="footer__contact-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            <div>
+              <div class="footer__contact-label">ایمیل</div>
+              <div class="footer__contact-val" style="direction:ltr;text-align:right;">info@satrapfelez.ir</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">© ۱۴۰۴ تمامی حقوق برای <strong>ساتراپ فلز</strong> محفوظ است.</p>
+        <div class="footer__badges">
+          <span class="footer__badge">ISO 9001</span>
+          <span class="footer__badge">ACI Certified</span>
+          <span class="footer__badge">HSE رتبه یک</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="custom.js"></script>
+</body>
+</html>

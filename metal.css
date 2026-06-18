@@ -1,0 +1,755 @@
+/* ===================================================
+   METAL.CSS — اختصاصی صفحه سازه‌های فلزی
+   وابسته به style.css و توکن‌های ریشه آن
+=================================================== */
+
+/* =====================================================
+   BUTTONS (shared — تعریف می‌شه اینجا چون style.css
+   مبهم باقی مونده)
+===================================================== */
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 28px;
+  background: var(--yellow);
+  color: var(--steel-900);
+  font-size: 0.8rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  border-radius: 3px;
+  border: none;
+  transition: background 0.3s, box-shadow 0.3s, transform 0.25s;
+  position: relative; overflow: hidden;
+  box-shadow: 0 8px 28px rgba(245,200,0,0.28);
+}
+.btn-primary svg {
+  width: 16px; height: 16px;
+  stroke: var(--steel-900); fill: none; stroke-width: 1.8;
+  flex-shrink: 0;
+}
+.btn-primary:hover {
+  background: #ffe030;
+  box-shadow: 0 12px 40px rgba(245,200,0,0.42);
+  transform: translateY(-2px);
+}
+
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 13px 24px;
+  color: rgba(255,255,255,0.6);
+  font-size: 0.8rem; font-weight: 500;
+  letter-spacing: 0.1em;
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 3px;
+  transition: color 0.3s, border-color 0.3s;
+}
+.btn-ghost svg {
+  width: 15px; height: 15px;
+  stroke: currentColor; fill: none; stroke-width: 1.8;
+}
+.btn-ghost:hover {
+  color: var(--white);
+  border-color: rgba(255,255,255,0.4);
+}
+
+/* =====================================================
+   PAGE HERO (ms = metal-structure)
+===================================================== */
+.ms-hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background: var(--steel-900);
+  display: flex;
+  align-items: center;
+}
+
+.ms-hero__bg {
+  position: absolute; inset: 0; z-index: 0;
+  background:
+    url('images/metal-hero.jpg') center / cover no-repeat,
+    linear-gradient(160deg, #0D3B5E 0%, #071C30 50%, #04101A 100%);
+  transform: scale(1.03);
+}
+
+/* Breadcrumb */
+.ms-breadcrumb {
+  position: absolute;
+  top: calc(var(--nav-height) + 20px);
+  right: clamp(40px, 8vw, 160px);
+  z-index: 10;
+  display: flex; align-items: center; gap: 6px;
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 0.08em;
+}
+.ms-breadcrumb a {
+  color: rgba(255,255,255,0.5);
+  transition: color 0.3s;
+}
+.ms-breadcrumb a:hover { color: var(--yellow); }
+.ms-breadcrumb__sep {
+  display: flex; align-items: center;
+  width: 14px; height: 14px;
+  color: rgba(255,255,255,0.2);
+}
+.ms-breadcrumb__sep svg { width: 100%; height: 100%; }
+
+/* Hero content */
+.ms-hero__content {
+  position: relative; z-index: 5;
+  padding: calc(var(--nav-height) + 80px) clamp(40px, 8vw, 160px) 240px;
+  max-width: 740px;
+  direction: rtl;
+}
+
+.ms-hero__tag {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 0.68rem; font-weight: 600; letter-spacing: 0.28em;
+  text-transform: uppercase; color: var(--yellow);
+  margin-bottom: 22px;
+  border: 1px solid rgba(245,200,0,0.2);
+  padding: 7px 14px; border-radius: 2px;
+  background: rgba(245,200,0,0.05);
+}
+.ms-hero__tag svg {
+  width: 14px; height: 14px;
+  stroke: var(--yellow); fill: none; stroke-width: 1.5;
+}
+
+.ms-hero__title {
+  display: flex; flex-direction: column;
+  gap: 4px; margin-bottom: 28px;
+}
+.ms-hero__title-light {
+  font-size: clamp(1rem, 1.4vw, 1.4rem);
+  font-weight: 300; color: rgba(255,255,255,0.5);
+  letter-spacing: 0.08em;
+}
+.ms-hero__title-bold {
+  font-size: clamp(2.8rem, 5vw, 5.5rem);
+  font-weight: 900; line-height: 0.95;
+  letter-spacing: -0.03em;
+  background: linear-gradient(110deg, #fff 0%, #FFF4C2 35%, #F5C800 70%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ms-hero__desc {
+  font-size: clamp(0.85rem, 0.95vw, 0.95rem);
+  color: rgba(255,255,255,0.48);
+  line-height: 2;
+  max-width: 520px;
+  margin-bottom: 38px;
+  background: rgba(4,16,26,0.38);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  padding: 14px 22px; border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.ms-hero__ctas {
+  display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+}
+
+/* Spec badges — bottom bar */
+.ms-hero__specs {
+  position: absolute; bottom: 0; left: 0; right: 0; z-index: 6;
+  display: flex;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  background: rgba(4,16,26,0.75);
+  backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+  justify-content: center;
+}
+.ms-spec-badge {
+  flex: 1; max-width: 200px;
+  padding: 18px 24px;
+  border-left: 1px solid rgba(255,255,255,0.06);
+  text-align: center;
+  transition: background 0.3s;
+}
+.ms-spec-badge:last-child { border-left: none; }
+.ms-spec-badge:hover { background: rgba(245,200,0,0.04); }
+.ms-spec-badge__val {
+  font-size: 1.1rem; font-weight: 800;
+  color: var(--white); letter-spacing: 0.04em;
+  line-height: 1;
+}
+.ms-spec-badge__lbl {
+  font-size: 0.58rem; color: rgba(255,255,255,0.3);
+  letter-spacing: 0.18em; text-transform: uppercase;
+  margin-top: 5px;
+}
+
+/* =====================================================
+   INTRO SECTION
+===================================================== */
+.ms-intro {
+  padding: var(--section-pad) 0;
+  background: var(--off-white);
+}
+
+.ms-intro__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.ms-intro__body {
+  font-size: 1rem; color: var(--text-mid);
+  line-height: 2;
+  margin: 20px 0 28px;
+}
+
+.ms-intro__feats {
+  display: flex; flex-direction: column; gap: 12px;
+}
+.ms-intro__feat {
+  display: flex; align-items: center; gap: 12px;
+  font-size: 0.88rem; color: var(--text-mid);
+  font-weight: 500;
+}
+.ms-intro__feat svg {
+  width: 18px; height: 18px;
+  stroke: var(--yellow); flex-shrink: 0;
+}
+
+/* Technical drawing box */
+.ms-intro__drawing {
+  background: var(--steel-900);
+  border: 1px solid rgba(74,142,194,0.2);
+  border-radius: var(--card-radius);
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+.ms-intro__drawing::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(46,111,163,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(46,111,163,0.04) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+.ms-intro__drawing svg {
+  width: 100%; height: auto; display: block;
+  position: relative; z-index: 1;
+}
+.ms-intro__drawing-label {
+  text-align: center;
+  font-size: 0.6rem; letter-spacing: 0.25em;
+  color: rgba(245,200,0,0.35);
+  text-transform: uppercase;
+  margin-top: 16px;
+  font-family: 'Courier New', monospace;
+}
+
+/* =====================================================
+   STRUCTURE TYPES
+===================================================== */
+.ms-types {
+  padding: var(--section-pad) 0;
+  background: var(--white);
+}
+
+.ms-types__header { margin-bottom: 60px; }
+
+.ms-types__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.ms-type-card {
+  background: var(--off-white);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: var(--card-radius);
+  padding: 32px 28px;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.4s, transform 0.4s, border-color 0.4s;
+}
+.ms-type-card::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(to right, transparent, var(--yellow), transparent);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.ms-type-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 64px rgba(13,59,94,0.12);
+  border-color: rgba(245,200,0,0.2);
+}
+.ms-type-card:hover::after { opacity: 1; }
+
+.ms-type-card__icon {
+  width: 52px; height: 52px;
+  background: linear-gradient(135deg, var(--steel-700), var(--steel-900));
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px;
+  border: 1px solid rgba(74,142,194,0.2);
+}
+.ms-type-card__icon svg {
+  width: 26px; height: 26px;
+  stroke: var(--yellow); fill: none;
+}
+
+.ms-type-card__num {
+  font-size: 0.62rem; font-weight: 700;
+  letter-spacing: 0.25em; color: var(--yellow);
+  margin-bottom: 10px;
+  font-family: 'Courier New', monospace;
+}
+
+.ms-type-card__title {
+  font-size: 1.05rem; font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.ms-type-card__desc {
+  font-size: 0.82rem; color: var(--text-light);
+  line-height: 1.85;
+  margin-bottom: 20px;
+}
+
+.ms-type-card__tag {
+  display: inline-block;
+  font-size: 0.58rem; letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--steel-400);
+  background: rgba(46,111,163,0.08);
+  border: 1px solid rgba(46,111,163,0.15);
+  padding: 4px 10px; border-radius: 3px;
+  font-family: 'Courier New', monospace;
+}
+
+/* =====================================================
+   PROCESS
+===================================================== */
+.ms-process {
+  padding: var(--section-pad) 0;
+  background: var(--off-white);
+}
+
+.ms-process__header { margin-bottom: 64px; }
+
+.ms-process__steps {
+  display: flex; flex-direction: column; gap: 0;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.ms-step {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 0 24px;
+  position: relative;
+}
+
+.ms-step__line {
+  grid-column: 1;
+  grid-row: 1 / 3;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--yellow), rgba(245,200,0,0.1));
+  position: relative;
+  margin: 60px auto 0;
+  min-height: 80px;
+}
+.ms-step__line--last {
+  background: linear-gradient(to bottom, var(--yellow), transparent);
+}
+
+.ms-step__num {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--steel-900);
+  border: 1.5px solid var(--yellow);
+  color: var(--yellow);
+  font-size: 0.88rem; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  grid-column: 1; grid-row: 1;
+  align-self: start;
+  margin: 0 auto;
+  box-shadow: 0 0 18px rgba(245,200,0,0.2);
+  font-family: 'Courier New', monospace;
+  flex-shrink: 0;
+}
+
+.ms-step__body {
+  grid-column: 2; grid-row: 1 / 3;
+  padding-bottom: 48px;
+  padding-top: 10px;
+}
+
+.ms-step__title {
+  font-size: 1rem; font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+.ms-step__desc {
+  font-size: 0.85rem; color: var(--text-light);
+  line-height: 1.9;
+}
+
+/* =====================================================
+   SPECS / CAPABILITIES
+===================================================== */
+.ms-specs-section {
+  padding: var(--section-pad) 0;
+  position: relative;
+  overflow: hidden;
+  background: var(--steel-900);
+}
+
+.ms-specs-section__bg {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(46,111,163,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(46,111,163,0.06) 1px, transparent 1px);
+  background-size: 52px 52px;
+  mask-image: radial-gradient(ellipse at center, transparent 25%, black 80%);
+  -webkit-mask-image: radial-gradient(ellipse at center, transparent 25%, black 80%);
+}
+
+.ms-specs-section__header { margin-bottom: 60px; }
+
+.ms-caps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  margin-bottom: 56px;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+}
+
+.ms-cap {
+  padding: 36px 28px;
+  text-align: center;
+  border-left: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.02);
+  transition: background 0.35s;
+}
+.ms-cap:last-child { border-left: none; }
+.ms-cap:hover { background: rgba(245,200,0,0.04); }
+
+.ms-cap__icon {
+  width: 44px; height: 44px;
+  border: 1px solid rgba(245,200,0,0.2);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 18px;
+  background: rgba(245,200,0,0.05);
+}
+.ms-cap__icon svg {
+  width: 20px; height: 20px;
+  stroke: var(--yellow);
+}
+
+.ms-cap__val {
+  font-size: 2.2rem; font-weight: 900;
+  color: var(--white); line-height: 1;
+  margin-bottom: 8px;
+}
+.ms-cap__val span {
+  font-size: 0.9rem; font-weight: 400;
+  color: rgba(255,255,255,0.4);
+  margin-right: 4px;
+}
+.ms-cap__lbl {
+  font-size: 0.68rem; color: rgba(255,255,255,0.35);
+  letter-spacing: 0.12em; line-height: 1.5;
+}
+
+/* Table */
+.ms-table-wrap {
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+}
+.ms-table-label {
+  padding: 14px 24px;
+  font-size: 0.68rem; font-weight: 600;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.03);
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.ms-table {
+  width: 100%; border-collapse: collapse;
+  direction: rtl;
+}
+.ms-table thead tr {
+  background: rgba(46,111,163,0.12);
+}
+.ms-table th {
+  padding: 14px 20px;
+  font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.1em; text-align: right;
+  color: rgba(255,255,255,0.55);
+  text-transform: uppercase;
+}
+.ms-table td {
+  padding: 14px 20px;
+  font-size: 0.83rem;
+  color: rgba(255,255,255,0.7);
+  border-top: 1px solid rgba(255,255,255,0.05);
+  font-family: 'Courier New', monospace;
+}
+.ms-table tbody tr:hover { background: rgba(245,200,0,0.04); }
+
+/* =====================================================
+   SAMPLE PROJECTS
+===================================================== */
+.ms-projects {
+  padding: var(--section-pad) 0;
+  background: var(--white);
+}
+.ms-projects__header { margin-bottom: 52px; }
+
+.ms-projects__grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 16px;
+}
+
+.ms-proj-card {
+  position: relative;
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  min-height: 340px;
+  background: var(--steel-900);
+  transition: transform 0.4s var(--ease-smooth);
+}
+.ms-proj-card:hover { transform: translateY(-6px); }
+.ms-proj-card:hover .ms-proj-card__overlay { background: linear-gradient(to top, rgba(4,16,26,0.97) 0%, rgba(4,16,26,0.5) 100%); }
+
+.ms-proj-card__img {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  transition: transform 0.6s var(--ease-slow);
+}
+.ms-proj-card:hover .ms-proj-card__img { transform: scale(1.06); }
+
+/* Placeholder backgrounds (تا وقتی تصویر واقعی بذاری) */
+.ms-proj-card__img--1 {
+  background-image: url('images/project-1.jpg'),
+    linear-gradient(145deg, #0D3B5E 0%, #04101A 100%);
+}
+.ms-proj-card__img--2 {
+  background-image: url('images/project-2.jpg'),
+    linear-gradient(145deg, #071828 0%, #0D3B5E 100%);
+}
+.ms-proj-card__img--3 {
+  background-image: url('images/project-3.jpg'),
+    linear-gradient(145deg, #1A5585 0%, #04101A 100%);
+}
+
+.ms-proj-card__overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(4,16,26,0.92) 0%, rgba(4,16,26,0.2) 70%, transparent 100%);
+  z-index: 1;
+  display: flex; flex-direction: column;
+  justify-content: flex-end;
+  padding: 28px 24px;
+  transition: background 0.4s;
+}
+
+.ms-proj-card__cat {
+  font-size: 0.6rem; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--yellow);
+  margin-bottom: 8px;
+}
+.ms-proj-card__title {
+  font-size: 1rem; font-weight: 700;
+  color: var(--white); line-height: 1.4;
+  margin-bottom: 10px;
+}
+.ms-proj-card__meta {
+  display: flex; gap: 8px; flex-wrap: wrap;
+  font-size: 0.68rem; color: rgba(255,255,255,0.4);
+}
+
+.ms-proj-card--featured { grid-row: span 1; }
+
+.ms-projects__cta {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* =====================================================
+   CONTACT SECTION
+===================================================== */
+.ms-contact {
+  padding: var(--section-pad) 0;
+  background: var(--off-white);
+}
+
+.ms-contact__card {
+  background: var(--steel-900);
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 0;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.ms-contact__deco {
+  position: absolute;
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245,200,0,0.06), transparent 70%);
+  top: -150px; right: -150px;
+  pointer-events: none;
+}
+
+.ms-contact__text {
+  padding: 60px 52px;
+  position: relative; z-index: 1;
+  border-left: 1px solid rgba(255,255,255,0.06);
+  display: flex; flex-direction: column; justify-content: center;
+}
+
+.ms-contact__title {
+  font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+  font-weight: 200;
+  color: var(--white);
+  line-height: 1.4;
+  margin: 18px 0 20px;
+}
+.ms-contact__title strong {
+  font-weight: 900;
+  background: var(--metallic-blue);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ms-contact__sub {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.38);
+  line-height: 1.9;
+}
+
+/* Form */
+.ms-contact__form {
+  padding: 52px 48px;
+  position: relative; z-index: 1;
+  display: flex; flex-direction: column; gap: 16px;
+}
+
+.ms-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.ms-form-group {
+  display: flex; flex-direction: column; gap: 7px;
+}
+.ms-form-group label {
+  font-size: 0.7rem; font-weight: 600;
+  letter-spacing: 0.1em; color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+}
+.ms-form-group input,
+.ms-form-group select,
+.ms-form-group textarea {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 6px;
+  padding: 11px 14px;
+  font-family: 'Vazirmatn', sans-serif;
+  font-size: 0.85rem;
+  color: var(--white);
+  direction: rtl;
+  transition: border-color 0.3s, background 0.3s;
+  outline: none;
+}
+.ms-form-group input::placeholder,
+.ms-form-group textarea::placeholder {
+  color: rgba(255,255,255,0.2);
+}
+.ms-form-group input:focus,
+.ms-form-group select:focus,
+.ms-form-group textarea:focus {
+  border-color: rgba(245,200,0,0.4);
+  background: rgba(255,255,255,0.07);
+}
+.ms-form-group select option {
+  background: var(--steel-900);
+  color: var(--white);
+}
+.ms-form-group textarea { resize: vertical; min-height: 90px; }
+
+.ms-contact__submit {
+  margin-top: 4px;
+  width: 100%;
+  justify-content: center;
+  font-size: 0.82rem;
+}
+
+/* =====================================================
+   HERO SCROLL CUE (از style.css ارث می‌بره ولی
+   اگه تعریف نبود اینجاست)
+===================================================== */
+.hero__scroll-cue {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex; flex-direction: column;
+  align-items: center; gap: 10px;
+  z-index: 6;
+}
+.hero__scroll-line {
+  width: 1px; height: 48px;
+  background: linear-gradient(to bottom, rgba(245,200,0,0.6), transparent);
+  animation: msScrollLine 1.8s ease-in-out infinite;
+}
+@keyframes msScrollLine {
+  0%   { opacity: 0; transform: scaleY(0); transform-origin: top; }
+  50%  { opacity: 1; transform: scaleY(1); transform-origin: top; }
+  100% { opacity: 0; transform: scaleY(1); transform-origin: bottom; }
+}
+.hero__scroll-label {
+  font-size: 0.56rem; letter-spacing: 0.3em;
+  color: rgba(255,255,255,0.25); text-transform: uppercase;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+@media (max-width: 1100px) {
+  .ms-types__grid { grid-template-columns: repeat(2, 1fr); }
+  .ms-caps-grid { grid-template-columns: repeat(2, 1fr); }
+  .ms-projects__grid { grid-template-columns: 1fr 1fr; }
+  .ms-proj-card--featured { grid-column: span 2; }
+}
+
+@media (max-width: 900px) {
+  .ms-intro__grid { grid-template-columns: 1fr; gap: 3rem; }
+  .ms-contact__card { grid-template-columns: 1fr; }
+  .ms-contact__text { border-left: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+}
+
+@media (max-width: 768px) {
+  .ms-types__grid { grid-template-columns: 1fr; }
+  .ms-projects__grid { grid-template-columns: 1fr; }
+  .ms-proj-card--featured { grid-column: span 1; }
+  .ms-caps-grid { grid-template-columns: 1fr 1fr; }
+  .ms-form-row { grid-template-columns: 1fr; }
+  .ms-hero__specs { display: none; }
+  .ms-hero__content { padding-bottom: 100px; }
+  .ms-breadcrumb { right: 24px; }
+  .ms-contact__text { padding: 40px 28px; }
+  .ms-contact__form { padding: 36px 28px; }
+  .ms-step { grid-template-columns: 44px 1fr; }
+}

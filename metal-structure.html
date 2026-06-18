@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>سازه‌های فلزی | ساتراپ فلز</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="metal.css" />
+</head>
+<body>
+
+  <!-- CUSTOM CURSOR -->
+  <div class="autocad-cursor__crosshair"></div>
+  <div class="autocad-cursor__pickbox"></div>
+
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress">
+    <div class="scroll-progress__bar" id="scrollBar"></div>
+  </div>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="nav" id="mainNav">
+    <ul class="nav__links">
+      <li><a href="#contact" class="nav__cta"><span>تماس با ما</span></a></li>
+      <li><a href="index.html">صفحه اصلی</a></li>
+      <li><a href="#">سازه‌های بتنی</a></li>
+      <li><a href="#" style="color:var(--yellow)">سازه‌های فلزی</a></li>
+        <li><a href="projects.html">پروژه‌ها</a></li>
+      <li><a href="#">وبلاگ</a></li>
+    </ul>
+    <div class="nav__logo">
+      <img
+        src="images/RTL_LOGO_transparent.png"
+        alt="ساتراپ فلز"
+        class="nav__logo-img"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+      >
+      <div class="nav__logo-mark" style="display:none;">
+        <svg viewBox="0 0 24 24"><path d="M3 21h18M3 7l9-4 9 4M4 7v14M20 7v14M8 7v14M16 7v14M12 3v18M8 11h8M8 15h8"/></svg>
+      </div>
+      <div class="nav__logo-text">
+        <span class="nav__logo-name">ساتراپ فلز</span>
+        <span class="nav__logo-sub">Satrap Felez Co.</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== PAGE HERO ========== -->
+  <section class="ms-hero" id="hero">
+    <div class="hero__bg-photo ms-hero__bg"></div>
+    <div class="hero__bg-overlay"></div>
+    <div class="hero__bg-grid"></div>
+    <div class="hero__bg-glow"></div>
+
+    <!-- breadcrumb -->
+    <div class="ms-breadcrumb">
+      <a href="index.html">خانه</a>
+      <span class="ms-breadcrumb__sep">
+        <svg viewBox="0 0 16 16" fill="none"><polyline points="10,4 6,8 10,12" stroke="currentColor" stroke-width="1.5"/></svg>
+      </span>
+      <span>سازه‌های فلزی</span>
+    </div>
+
+    <div class="ms-hero__content">
+      <div class="ms-hero__tag reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M3 7l9-4 9 4M4 7v14M20 7v14M8 7v14M16 7v14M12 3v18M8 11h8M8 15h8"/></svg>
+        تخصص ما در سازه‌های فلزی
+      </div>
+      <h1 class="ms-hero__title reveal">
+        <span class="ms-hero__title-light">مهندسی فولاد،</span>
+        <span class="ms-hero__title-bold">تجسم قدرت</span>
+      </h1>
+      <p class="ms-hero__desc reveal">
+        از اسکلت صنعتی تا سازه‌های پیچیده پتروشیمی — با فناوری روز و تیم مجرب ساتراپ فلز، هر پروژه را به استانداردهای جهانی می‌رسانیم.
+      </p>
+      <div class="ms-hero__ctas reveal">
+        <a href="#contact" class="btn-primary">
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+          درخواست مشاوره
+        </a>
+        <a href="#types" class="btn-ghost">
+          انواع سازه‌ها
+          <svg viewBox="0 0 24 24"><polyline points="6,9 12,15 18,9"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- floating spec badges -->
+    <div class="ms-hero__specs">
+      <div class="ms-spec-badge">
+        <div class="ms-spec-badge__val">ST37</div>
+        <div class="ms-spec-badge__lbl">تا ST52</div>
+      </div>
+      <div class="ms-spec-badge">
+        <div class="ms-spec-badge__val">۵۰۰۰+</div>
+        <div class="ms-spec-badge__lbl">تن ساخت سالانه</div>
+      </div>
+      <div class="ms-spec-badge">
+        <div class="ms-spec-badge__val">ISO</div>
+        <div class="ms-spec-badge__lbl">9001 · 3834</div>
+      </div>
+    </div>
+
+    <div class="hero__scroll-cue">
+      <div class="hero__scroll-line"></div>
+      <span class="hero__scroll-label">اسکرول</span>
+    </div>
+  </section>
+
+  <!-- ========== INTRO STRIP ========== -->
+  <section class="ms-intro">
+    <div class="container">
+      <div class="ms-intro__grid">
+        <div class="ms-intro__text reveal">
+          <div class="section-label">چرا فولاد؟</div>
+          <h2 class="section-title">سازه‌ای که <span>نسل‌ها</span> دوام می‌آورد</h2>
+          <p class="ms-intro__body">
+            فولاد سازه‌ای با بالاترین نسبت مقاومت به وزن، انعطاف طراحی بی‌نظیر و قابلیت بازیافت کامل — انتخاب هوشمند برای صنعت، انرژی و معماری مدرن است.
+          </p>
+          <div class="ms-intro__feats">
+            <div class="ms-intro__feat">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="20,6 9,17 4,12"/></svg>
+              مقاومت بالا در برابر زلزله و باد
+            </div>
+            <div class="ms-intro__feat">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="20,6 9,17 4,12"/></svg>
+              اجرای سریع و پیش‌فابریکاسیون
+            </div>
+            <div class="ms-intro__feat">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="20,6 9,17 4,12"/></svg>
+              انعطاف در معماری و فرم‌دهی
+            </div>
+            <div class="ms-intro__feat">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="20,6 9,17 4,12"/></svg>
+              پایداری و قابلیت بازیافت
+            </div>
+          </div>
+        </div>
+        <div class="ms-intro__visual reveal reveal-delay-1">
+          <!-- Technical drawing placeholder -->
+          <div class="ms-intro__drawing">
+            <svg viewBox="0 0 400 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Grid lines -->
+              <line x1="0" y1="280" x2="400" y2="280" stroke="rgba(245,200,0,0.15)" stroke-width="1"/>
+              <line x1="40" y1="0" x2="40" y2="320" stroke="rgba(245,200,0,0.08)" stroke-width="1" stroke-dasharray="4,6"/>
+              <line x1="360" y1="0" x2="360" y2="320" stroke="rgba(245,200,0,0.08)" stroke-width="1" stroke-dasharray="4,6"/>
+              <!-- Frame structure -->
+              <rect x="60" y="60" width="280" height="220" stroke="rgba(74,142,194,0.6)" stroke-width="1.5" fill="none"/>
+              <!-- Columns -->
+              <rect x="60" y="60" width="12" height="220" fill="rgba(74,142,194,0.25)" stroke="rgba(74,142,194,0.7)" stroke-width="1"/>
+              <rect x="328" y="60" width="12" height="220" fill="rgba(74,142,194,0.25)" stroke="rgba(74,142,194,0.7)" stroke-width="1"/>
+              <!-- Beams -->
+              <rect x="60" y="60" width="280" height="10" fill="rgba(74,142,194,0.25)" stroke="rgba(74,142,194,0.7)" stroke-width="1"/>
+              <rect x="60" y="270" width="280" height="10" fill="rgba(74,142,194,0.25)" stroke="rgba(74,142,194,0.7)" stroke-width="1"/>
+              <rect x="60" y="165" width="280" height="8" fill="rgba(74,142,194,0.2)" stroke="rgba(74,142,194,0.5)" stroke-width="1"/>
+              <!-- X bracing -->
+              <line x1="72" y1="70" x2="328" y2="273" stroke="rgba(245,200,0,0.35)" stroke-width="1.5" stroke-dasharray="6,4"/>
+              <line x1="328" y1="70" x2="72" y2="273" stroke="rgba(245,200,0,0.35)" stroke-width="1.5" stroke-dasharray="6,4"/>
+              <!-- Dimension arrows -->
+              <line x1="20" y1="60" x2="20" y2="280" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+              <text x="10" y="175" fill="rgba(255,255,255,0.3)" font-size="9" text-anchor="middle" transform="rotate(-90,10,175)">ارتفاع</text>
+              <!-- Labels -->
+              <text x="200" y="300" fill="rgba(245,200,0,0.5)" font-size="8" text-anchor="middle" font-family="monospace">SATRAP FELEZ — FRAME TYPE S-1</text>
+              <!-- Corner marks -->
+              <path d="M60,60 L75,60 M60,60 L60,75" stroke="var(--yellow)" stroke-width="2"/>
+              <path d="M340,60 L325,60 M340,60 L340,75" stroke="var(--yellow)" stroke-width="2"/>
+              <path d="M60,280 L75,280 M60,280 L60,265" stroke="var(--yellow)" stroke-width="2"/>
+              <path d="M340,280 L325,280 M340,280 L340,265" stroke="var(--yellow)" stroke-width="2"/>
+            </svg>
+            <div class="ms-intro__drawing-label">نقشه شماتیک — قاب فولادی</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== STRUCTURE TYPES ========== -->
+  <section class="ms-types" id="types">
+    <div class="container">
+      <div class="ms-types__header reveal">
+        <div class="section-label">دامنه خدمات</div>
+        <h2 class="section-title">انواع <span>سازه‌های فلزی</span></h2>
+      </div>
+      <div class="ms-types__grid">
+
+        <div class="ms-type-card reveal">
+          <div class="ms-type-card__icon">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4">
+              <rect x="4" y="8" width="24" height="20" rx="1"/>
+              <line x1="4" y1="14" x2="28" y2="14"/>
+              <line x1="4" y1="20" x2="28" y2="20"/>
+              <line x1="12" y1="8" x2="12" y2="28"/>
+              <line x1="20" y1="8" x2="20" y2="28"/>
+              <path d="M4 8 L16 2 L28 8"/>
+            </svg>
+          </div>
+          <div class="ms-type-card__num">۰۱</div>
+          <h3 class="ms-type-card__title">سوله‌های صنعتی</h3>
+          <p class="ms-type-card__desc">دهانه‌های بزرگ تا ۶۰ متر، سقف خرپایی و قوسی، برای کارخانه، انبار و سالن‌های تولیدی.</p>
+          <div class="ms-type-card__tag">Industrial Shed</div>
+        </div>
+
+        <div class="ms-type-card reveal reveal-delay-1">
+          <div class="ms-type-card__icon">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4">
+              <line x1="4" y1="28" x2="4" y2="8"/>
+              <line x1="28" y1="28" x2="28" y2="8"/>
+              <line x1="4" y1="8" x2="28" y2="8"/>
+              <line x1="4" y1="16" x2="28" y2="16"/>
+              <line x1="4" y1="22" x2="28" y2="22"/>
+              <line x1="10" y1="8" x2="10" y2="28"/>
+              <line x1="16" y1="8" x2="16" y2="28"/>
+              <line x1="22" y1="8" x2="22" y2="28"/>
+              <rect x="4" y="28" width="24" height="2" fill="rgba(74,142,194,0.3)"/>
+            </svg>
+          </div>
+          <div class="ms-type-card__num">۰۲</div>
+          <h3 class="ms-type-card__title">اسکلت ساختمانی</h3>
+          <p class="ms-type-card__desc">قاب‌های فولادی چندطبقه برای ساختمان‌های مسکونی، تجاری و اداری با رعایت استانداردهای لرزه‌ای.</p>
+          <div class="ms-type-card__tag">Steel Frame</div>
+        </div>
+
+        <div class="ms-type-card reveal reveal-delay-2">
+          <div class="ms-type-card__icon">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4">
+              <path d="M4 28 L16 4 L28 28 Z"/>
+              <line x1="4" y1="28" x2="28" y2="28"/>
+              <line x1="10" y1="20" x2="22" y2="20"/>
+              <line x1="7" y1="24" x2="25" y2="24"/>
+              <line x1="14" y1="12" x2="16" y2="4" stroke="rgba(245,200,0,0.5)"/>
+            </svg>
+          </div>
+          <div class="ms-type-card__num">۰۳</div>
+          <h3 class="ms-type-card__title">سازه‌های خرپایی</h3>
+          <p class="ms-type-card__desc">خرپاهای سقفی، پل‌های صنعتی و سکوهای دسترسی با محاسبه دقیق بار و ضریب اطمینان بالا.</p>
+          <div class="ms-type-card__tag">Truss Structure</div>
+        </div>
+
+        <div class="ms-type-card reveal reveal-delay-3">
+          <div class="ms-type-card__icon">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4">
+              <circle cx="16" cy="16" r="10" stroke-dasharray="4,3"/>
+              <circle cx="16" cy="16" r="4"/>
+              <line x1="16" y1="6" x2="16" y2="4"/>
+              <line x1="16" y1="26" x2="16" y2="28"/>
+              <line x1="6" y1="16" x2="4" y2="16"/>
+              <line x1="26" y1="16" x2="28" y2="16"/>
+              <path d="M6 28 L16 10 L26 28" stroke="rgba(245,200,0,0.6)"/>
+            </svg>
+          </div>
+          <div class="ms-type-card__num">۰۴</div>
+          <h3 class="ms-type-card__title">سازه‌های پتروشیمی</h3>
+          <p class="ms-type-card__desc">پایپ‌رک، ساپورت‌های لوله، راه‌پله‌های صنعتی و سکوهای تجهیزات در محیط‌های خورنده و دما بالا.</p>
+          <div class="ms-type-card__tag">Petrochemical</div>
+        </div>
+
+        <div class="ms-type-card reveal">
+          <div class="ms-type-card__icon">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4">
+              <path d="M2 28 Q8 18 16 18 Q24 18 30 28"/>
+              <line x1="2" y1="28" x2="30" y2="28"/>
+              <line x1="8" y1="28" x2="10" y2="20"/>
+              <line x1="24" y1="28" x2="22" y2="20"/>
+              <line x1="16" y1="28" x2="16" y2="18"/>
+              <line x1="2" y1="28" x2="2" y2="10"/>
+              <line x1="30" y1="28" x2="30" y2="10"/>
+              <path d="M2 10 Q16 4 30 10"/>
+            </svg>
+          </div>
+          <div class="ms-type-card__num">۰۵</div>
+          <h3 class="ms-type-card__title">پل‌های فولادی</h3>
+          <p class="ms-type-card__desc">پل‌های عابر پیاده، خودرو و ریلی با انواع سیستم سازه‌ای: خرپایی، معلق، عرشه فولادی و ترکیبی.</p>
+          <div class="ms-type-card__tag">Steel Bridge</div>
+        </div>
+
+        <div class="ms-type-card reveal reveal-delay-1">
+          <div class="ms-type-card__icon">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4">
+              <rect x="12" y="4" width="8" height="24" rx="1"/>
+              <line x1="8" y1="28" x2="24" y2="28"/>
+              <line x1="6" y1="24" x2="12" y2="24"/>
+              <line x1="26" y1="24" x2="20" y2="24"/>
+              <line x1="4" y1="20" x2="12" y2="20"/>
+              <line x1="28" y1="20" x2="20" y2="20"/>
+              <line x1="4" y1="16" x2="12" y2="16"/>
+              <line x1="28" y1="16" x2="20" y2="16"/>
+            </svg>
+          </div>
+          <div class="ms-type-card__num">۰۶</div>
+          <h3 class="ms-type-card__title">دکل و برج فولادی</h3>
+          <p class="ms-type-card__desc">دکل‌های مخابراتی، برج‌های انتقال برق، دودکش‌های صنعتی و مخازن هوایی با طراحی باد و زلزله.</p>
+          <div class="ms-type-card__tag">Tower & Mast</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROCESS ========== -->
+  <section class="ms-process" id="process">
+    <div class="container">
+      <div class="ms-process__header reveal">
+        <div class="section-label">فرآیند اجرا</div>
+        <h2 class="section-title">از <span>ایده</span> تا <span>تحویل</span></h2>
+      </div>
+      <div class="ms-process__steps">
+
+        <div class="ms-step reveal">
+          <div class="ms-step__line"></div>
+          <div class="ms-step__num">۱</div>
+          <div class="ms-step__body">
+            <h4 class="ms-step__title">مشاوره و برداشت</h4>
+            <p class="ms-step__desc">بررسی نیاز پروژه، انجام برداشت میدانی و تحلیل شرایط سایت توسط تیم مهندسی.</p>
+          </div>
+        </div>
+
+        <div class="ms-step reveal reveal-delay-1">
+          <div class="ms-step__line"></div>
+          <div class="ms-step__num">۲</div>
+          <div class="ms-step__body">
+            <h4 class="ms-step__title">طراحی و مدلسازی</h4>
+            <p class="ms-step__desc">طراحی سازه با نرم‌افزارهای ETABS، SAP2000 و تهیه نقشه‌های اجرایی IFC/DWG.</p>
+          </div>
+        </div>
+
+        <div class="ms-step reveal reveal-delay-2">
+          <div class="ms-step__line"></div>
+          <div class="ms-step__num">۳</div>
+          <div class="ms-step__body">
+            <h4 class="ms-step__title">فابریکاسیون</h4>
+            <p class="ms-step__desc">برش CNC، جوشکاری اتوماتیک و آماده‌سازی قطعات در کارگاه مجهز با کنترل کیفیت ISO.</p>
+          </div>
+        </div>
+
+        <div class="ms-step reveal reveal-delay-3">
+          <div class="ms-step__line"></div>
+          <div class="ms-step__num">۴</div>
+          <div class="ms-step__body">
+            <h4 class="ms-step__title">حمل و نصب</h4>
+            <p class="ms-step__desc">حمل مدیریت‌شده، نصب با جرثقیل‌های سنگین و تیم HSE اختصاصی در محل پروژه.</p>
+          </div>
+        </div>
+
+        <div class="ms-step reveal">
+          <div class="ms-step__line ms-step__line--last"></div>
+          <div class="ms-step__num">۵</div>
+          <div class="ms-step__body">
+            <h4 class="ms-step__title">تحویل و گارانتی</h4>
+            <p class="ms-step__desc">تحویل مستند با گزارش NDT، آزمون‌های کیفی و ارائه گارانتی ۱۰ ساله سازه.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SPECS / CAPABILITIES ========== -->
+  <section class="ms-specs-section" id="specs">
+    <div class="ms-specs-section__bg"></div>
+    <div class="container">
+      <div class="ms-specs-section__header reveal">
+        <div class="section-label">توانمندی‌های فنی</div>
+        <h2 class="section-title" style="color:var(--white)">ظرفیت <span>تولید</span> و <span>ساخت</span></h2>
+      </div>
+      <div class="ms-caps-grid">
+
+        <div class="ms-cap reveal">
+          <div class="ms-cap__icon">
+            <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.3">
+              <circle cx="14" cy="14" r="10"/>
+              <path d="M14 8 L14 14 L19 17"/>
+            </svg>
+          </div>
+          <div class="ms-cap__val">۵۰۰۰<span>تن</span></div>
+          <div class="ms-cap__lbl">ظرفیت فابریکاسیون سالانه</div>
+        </div>
+
+        <div class="ms-cap reveal reveal-delay-1">
+          <div class="ms-cap__icon">
+            <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.3">
+              <path d="M4 24 L14 4 L24 24"/>
+              <line x1="8" y1="18" x2="20" y2="18"/>
+            </svg>
+          </div>
+          <div class="ms-cap__val">۶۰<span>متر</span></div>
+          <div class="ms-cap__lbl">حداکثر دهانه آزاد</div>
+        </div>
+
+        <div class="ms-cap reveal reveal-delay-2">
+          <div class="ms-cap__icon">
+            <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.3">
+              <path d="M14 4 L24 10 L24 20 L14 26 L4 20 L4 10 Z"/>
+              <circle cx="14" cy="15" r="4"/>
+            </svg>
+          </div>
+          <div class="ms-cap__val">ST52<span>‌</span></div>
+          <div class="ms-cap__lbl">بالاترین گرید فولاد مصرفی</div>
+        </div>
+
+        <div class="ms-cap reveal reveal-delay-3">
+          <div class="ms-cap__icon">
+            <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.3">
+              <rect x="5" y="5" width="18" height="18" rx="2"/>
+              <polyline points="9,14 12,17 19,10"/>
+            </svg>
+          </div>
+          <div class="ms-cap__val">ISO<span> 3834</span></div>
+          <div class="ms-cap__lbl">استاندارد جوشکاری معتبر</div>
+        </div>
+
+      </div>
+
+      <!-- Material specs table -->
+      <div class="ms-table-wrap reveal">
+        <div class="ms-table-label">جدول مشخصات پروفیل‌های رایج</div>
+        <table class="ms-table">
+          <thead>
+            <tr>
+              <th>پروفیل</th>
+              <th>گرید فولاد</th>
+              <th>کاربرد اصلی</th>
+              <th>استاندارد</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>IPE / HEA / HEB</td>
+              <td>ST37 · ST52</td>
+              <td>تیر و ستون اسکلت</td>
+              <td>DIN 1025</td>
+            </tr>
+            <tr>
+              <td>ناودانی (UPN)</td>
+              <td>ST37</td>
+              <td>پرلین سقف و جداره</td>
+              <td>EN 10034</td>
+            </tr>
+            <tr>
+              <td>قوطی (RHS / SHS)</td>
+              <td>ST37 · ST52</td>
+              <td>خرپا و بادبند</td>
+              <td>EN 10219</td>
+            </tr>
+            <tr>
+              <td>ورق فولادی</td>
+              <td>A36 · A572</td>
+              <td>صفحه ستون، اتصال</td>
+              <td>ASTM A36</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SAMPLE PROJECTS ========== -->
+  <section class="ms-projects" id="projects">
+    <div class="container">
+      <div class="ms-projects__header reveal">
+        <div class="section-label">نمونه پروژه‌ها</div>
+        <h2 class="section-title">کارهایی که <span>به آن افتخار می‌کنیم</span></h2>
+      </div>
+      <div class="ms-projects__grid">
+
+        <div class="ms-proj-card ms-proj-card--featured reveal">
+          <div class="ms-proj-card__img ms-proj-card__img--1"></div>
+          <div class="ms-proj-card__overlay">
+            <div class="ms-proj-card__cat">سوله صنعتی</div>
+            <h3 class="ms-proj-card__title">سالن تولید فولاد مبارکه</h3>
+            <div class="ms-proj-card__meta">
+              <span>دهانه ۴۸ متر</span>
+              <span>•</span>
+              <span>۱۲۰۰ تن فولاد</span>
+              <span>•</span>
+              <span>اصفهان</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="ms-proj-card reveal reveal-delay-1">
+          <div class="ms-proj-card__img ms-proj-card__img--2"></div>
+          <div class="ms-proj-card__overlay">
+            <div class="ms-proj-card__cat">پتروشیمی</div>
+            <h3 class="ms-proj-card__title">پایپ‌رک پتروشیمی پارس</h3>
+            <div class="ms-proj-card__meta">
+              <span>۸۵۰ تن</span>
+              <span>•</span>
+              <span>عسلویه</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="ms-proj-card reveal reveal-delay-2">
+          <div class="ms-proj-card__img ms-proj-card__img--3"></div>
+          <div class="ms-proj-card__overlay">
+            <div class="ms-proj-card__cat">اسکلت ساختمانی</div>
+            <h3 class="ms-proj-card__title">برج اداری تجاری تهران</h3>
+            <div class="ms-proj-card__meta">
+              <span>۲۲ طبقه</span>
+              <span>•</span>
+              <span>تهران</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="ms-projects__cta reveal">
+        <a href="index.html#projects" class="btn-ghost">
+          مشاهده همه پروژه‌ها
+          <svg viewBox="0 0 24 24"><polyline points="6,9 12,15 18,9"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__brand-logo">
+            <div class="footer__brand-logo-mark">
+              <svg viewBox="0 0 24 24" fill="white"><path d="M3 21h18M3 7l9-4 9 4M4 7v14M20 7v14M8 7v14M16 7v14M12 3v18M8 11h8M8 15h8"/></svg>
+            </div>
+            <div>
+              <div class="footer__brand-name">ساتراپ فلز</div>
+              <div class="footer__brand-sub">Satrap Felez Co.</div>
+            </div>
+          </div>
+          <p class="footer__tagline">سازنده آینده‌ای پایدار با فولاد، از ایران برای جهان.</p>
+          <div class="footer__social">
+            <a href="#" aria-label="اینستاگرام"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="#" aria-label="لینکدین"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="#" aria-label="تلگرام"><svg viewBox="0 0 24 24"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">دسترسی سریع</div>
+          <ul class="footer__links">
+            <li><a href="index.html">صفحه اصلی</a></li>
+            <li><a href="#types">انواع سازه</a></li>
+            <li><a href="#process">فرآیند اجرا</a></li>
+            <li><a href="#projects">نمونه پروژه‌ها</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer__col-title">خدمات ما</div>
+          <ul class="footer__links">
+            <li><a href="#">طراحی سازه فولادی</a></li>
+            <li><a href="#">فابریکاسیون و ساخت</a></li>
+            <li><a href="#">نصب و برپاسازی</a></li>
+            <li><a href="#">مشاوره فنی</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer__col-title">ارتباط با ما</div>
+          <div class="footer__contact-item">
+            <div class="footer__contact-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.62A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg></div>
+            <div>
+              <div class="footer__contact-label">تلفن تماس</div>
+              <div class="footer__contact-val" style="direction:ltr;text-align:right;">۰۳۱ - ۳۴۵۶۷۸۹۰</div>
+            </div>
+          </div>
+          <div class="footer__contact-item">
+            <div class="footer__contact-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            <div>
+              <div class="footer__contact-label">ایمیل</div>
+              <div class="footer__contact-val" style="direction:ltr;text-align:right;">info@satrapfelez.ir</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">© ۱۴۰۴ تمامی حقوق برای <strong>ساتراپ فلز</strong> محفوظ است.</p>
+        <div class="footer__badges">
+          <span class="footer__badge">ISO 9001</span>
+          <span class="footer__badge">ISO 3834</span>
+          <span class="footer__badge">HSE رتبه یک</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="custom.js"></script>
+</body>
+</html>

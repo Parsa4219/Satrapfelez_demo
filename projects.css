@@ -1,0 +1,441 @@
+/* ===================================================
+   PROJECTS.CSS — اختصاصی صفحه پروژه‌ها
+   وابسته به style.css
+=================================================== */
+
+/* =====================================================
+   HERO
+===================================================== */
+.projects-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--steel-900);
+  overflow: hidden;
+}
+
+.projects-hero__bg {
+  position: absolute; inset: 0;
+  background:
+    url('images/project-hero.jpg') center / cover no-repeat,
+    linear-gradient(160deg, #0D3B5E 0%, #071C30 45%, #04101A 100%);
+  transform: scale(1.03);
+}
+
+.projects-hero__overlay {
+  position: absolute; inset: 0; z-index: 1;
+  background:
+    linear-gradient(to bottom,
+      rgba(4,16,26,0.75) 0%,
+      rgba(4,16,26,0.22) 30%,
+      rgba(4,16,26,0.18) 55%,
+      rgba(4,16,26,0.78) 80%,
+      rgba(4,16,26,0.97) 100%
+    ),
+    linear-gradient(to left,
+      rgba(4,16,26,0.6) 0%,
+      transparent 35%
+    );
+}
+
+/* grid */
+.projects-hero__grid {
+  position: absolute; inset: 0; z-index: 2; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(46,111,163,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(46,111,163,0.06) 1px, transparent 1px);
+  background-size: 52px 52px;
+  mask-image: radial-gradient(ellipse at center, transparent 28%, black 85%);
+  -webkit-mask-image: radial-gradient(ellipse at center, transparent 28%, black 85%);
+}
+
+/* schematic SVG — left side */
+.projects-hero__schematic {
+  position: absolute; left: 0; top: 0; bottom: 0;
+  width: 50%; z-index: 2; pointer-events: none; opacity: 0.18;
+}
+.projects-hero__schematic svg { width: 100%; height: 100%; }
+
+/* glow */
+.projects-hero__glow {
+  position: absolute; z-index: 2;
+  left: 15%; top: 8%;
+  width: 500px; height: 500px; border-radius: 50%;
+  background: radial-gradient(circle,
+    rgba(245,200,0,0.04) 0%,
+    rgba(46,111,163,0.06) 45%,
+    transparent 72%
+  );
+  pointer-events: none;
+}
+
+/* breadcrumb */
+.projects-breadcrumb {
+  position: absolute;
+  top: calc(var(--nav-height) + 20px);
+  right: clamp(40px, 8vw, 160px);
+  z-index: 10;
+  display: flex; align-items: center; gap: 6px;
+  font-size: 0.7rem; color: rgba(255,255,255,0.32);
+  letter-spacing: 0.08em;
+}
+.projects-breadcrumb a { color: rgba(255,255,255,0.48); transition: color 0.3s; }
+.projects-breadcrumb a:hover { color: var(--yellow); }
+.projects-breadcrumb span { color: rgba(255,255,255,0.18); }
+
+/* content */
+.projects-hero__content {
+  position: relative; z-index: 5;
+  padding: calc(var(--nav-height) + 80px) clamp(40px, 8vw, 160px) 260px;
+  max-width: 720px; direction: rtl;
+}
+
+.projects-hero__tag {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 0.68rem; font-weight: 600; letter-spacing: 0.28em;
+  text-transform: uppercase; color: var(--yellow);
+  border: 1px solid rgba(245,200,0,0.2);
+  padding: 7px 14px; border-radius: 2px;
+  background: rgba(245,200,0,0.05);
+  margin-bottom: 22px;
+}
+.projects-hero__tag svg {
+  width: 14px; height: 14px;
+  stroke: var(--yellow); fill: none; stroke-width: 1.5;
+}
+
+.projects-hero__title {
+  display: flex; flex-direction: column;
+  gap: 4px; margin-bottom: 24px;
+}
+.projects-hero__title-light {
+  font-size: clamp(1rem, 1.4vw, 1.3rem);
+  font-weight: 300; color: rgba(255,255,255,0.45);
+  letter-spacing: 0.08em;
+}
+.projects-hero__title-bold {
+  font-size: clamp(2.8rem, 5vw, 5.5rem);
+  font-weight: 900; line-height: 0.95;
+  letter-spacing: -0.03em;
+  background: linear-gradient(110deg, #fff 0%, #FFF4C2 35%, #F5C800 70%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.projects-hero__desc {
+  font-size: clamp(0.82rem, 0.92vw, 0.92rem);
+  color: rgba(255,255,255,0.44); line-height: 2;
+  max-width: 500px; margin-bottom: 36px;
+  background: rgba(4,16,26,0.38);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  padding: 14px 22px; border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.projects-hero__ctas { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+
+/* stats bar */
+.projects-hero__stats {
+  position: absolute; bottom: 0; left: 0; right: 0; z-index: 6;
+  display: flex; justify-content: center;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  background: rgba(4,16,26,0.75);
+  backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+}
+.projects-hero__stat {
+  flex: 1; max-width: 200px;
+  padding: 18px 24px; text-align: center;
+  border-left: 1px solid rgba(255,255,255,0.06);
+  transition: background 0.3s;
+}
+.projects-hero__stat:last-child { border-left: none; }
+.projects-hero__stat:hover { background: rgba(245,200,0,0.04); }
+.projects-hero__stat-val {
+  font-size: 1.1rem; font-weight: 800; color: var(--white);
+  letter-spacing: 0.04em; line-height: 1;
+}
+.projects-hero__stat-lbl {
+  font-size: 0.58rem; color: rgba(255,255,255,0.3);
+  letter-spacing: 0.18em; text-transform: uppercase; margin-top: 5px;
+}
+
+/* scroll cue */
+.projects-hero__scroll {
+  position: absolute; bottom: 90px; left: 50%;
+  transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  z-index: 6;
+}
+.projects-hero__scroll-line {
+  width: 1px; height: 44px;
+  background: linear-gradient(to bottom, rgba(245,200,0,0.6), transparent);
+  animation: pScrollLine 1.8s ease-in-out infinite;
+}
+@keyframes pScrollLine {
+  0%   { opacity: 0; transform: scaleY(0); transform-origin: top; }
+  50%  { opacity: 1; transform: scaleY(1); transform-origin: top; }
+  100% { opacity: 0; transform: scaleY(1); transform-origin: bottom; }
+}
+.projects-hero__scroll-label {
+  font-size: 0.55rem; letter-spacing: 0.3em;
+  color: rgba(255,255,255,0.22); text-transform: uppercase;
+}
+
+/* =====================================================
+   FILTER BAR — وضعیت پروژه
+===================================================== */
+.projects-filter {
+  position: sticky; top: var(--nav-height); z-index: 100;
+  background: rgba(4,16,26,0.92);
+  backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.projects-filter__inner {
+  display: flex; align-items: stretch;
+  width: min(90%, 1320px); margin-inline: auto;
+  gap: 0;
+}
+
+/* filter buttons */
+.pf-btn {
+  display: flex; flex-direction: column; align-items: center; gap: 5px;
+  padding: 16px 32px;
+  cursor: pointer; border: none; background: none;
+  font-family: 'Vazirmatn', sans-serif;
+  font-size: 0.72rem; font-weight: 500;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 0.08em;
+  border-bottom: 2px solid transparent;
+  transition: color 0.25s, border-color 0.25s, background 0.25s;
+  white-space: nowrap; position: relative;
+}
+.pf-btn:hover { color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.02); }
+.pf-btn.active { color: var(--yellow); border-bottom-color: var(--yellow); }
+.pf-btn.active .pf-icon { background: rgba(245,200,0,0.1); border-color: rgba(245,200,0,0.28); }
+
+.pf-icon {
+  width: 40px; height: 40px; border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.25s, border-color 0.25s;
+}
+.pf-icon svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 1.4; }
+
+.pf-label { font-size: 0.72rem; }
+
+.pf-count {
+  font-size: 0.58rem; color: rgba(255,255,255,0.2);
+  letter-spacing: 0.1em;
+}
+.pf-btn.active .pf-count { color: rgba(245,200,0,0.5); }
+
+/* live dot برای در حال اجرا */
+.pf-live {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: #22C55E;
+  box-shadow: 0 0 6px rgba(34,197,94,0.6);
+  animation: pLivePulse 2s ease-in-out infinite;
+  position: absolute; top: 12px; left: 12px;
+}
+@keyframes pLivePulse {
+  0%,100% { box-shadow: 0 0 6px rgba(34,197,94,0.6); }
+  50%      { box-shadow: 0 0 12px rgba(34,197,94,0.9); }
+}
+
+/* separator */
+.pf-sep {
+  width: 1px; background: rgba(255,255,255,0.05);
+  align-self: stretch; flex-shrink: 0; margin: 8px 0;
+}
+
+/* view toggle — سمت چپ (در RTL = آخر) */
+.pf-view {
+  display: flex; align-items: center; gap: 8px;
+  margin-left: auto;
+  padding: 0 24px;
+  border-left: 1px solid rgba(255,255,255,0.05);
+}
+.pf-view-lbl {
+  font-size: 0.6rem; color: rgba(255,255,255,0.2);
+  letter-spacing: 0.12em; margin-left: 4px;
+}
+.pf-view-btn {
+  width: 32px; height: 32px; border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s, border-color 0.2s;
+}
+.pf-view-btn svg { width: 14px; height: 14px; stroke: rgba(255,255,255,0.3); fill: none; stroke-width: 1.4; }
+.pf-view-btn.active {
+  background: rgba(245,200,0,0.08);
+  border-color: rgba(245,200,0,0.22);
+}
+.pf-view-btn.active svg { stroke: var(--yellow); }
+
+/* =====================================================
+   SECTIONS
+===================================================== */
+.projects-section {
+  padding: var(--section-pad) 0;
+  background: var(--steel-900);
+}
+.projects-section--completed {
+  background: var(--off-white);
+}
+
+.projects-section__header { margin-bottom: 52px; }
+
+/* =====================================================
+   PROJECT CARDS
+===================================================== */
+.pj-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 16px;
+}
+
+.pj-card {
+  position: relative;
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  min-height: 320px;
+  background: var(--steel-900);
+  transition: transform 0.4s var(--ease-smooth);
+}
+.pj-card--featured { grid-column: span 2; min-height: 380px; }
+.pj-card:hover { transform: translateY(-6px); }
+.pj-card:hover .pj-card__img { transform: scale(1.06); }
+.pj-card:hover .pj-card__overlay {
+  background: linear-gradient(to top, rgba(4,16,26,0.97) 0%, rgba(4,16,26,0.5) 100%);
+}
+
+.pj-card__img {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  transition: transform 0.6s var(--ease-slow);
+}
+
+/* placeholder gradients تا تصاویر واقعی */
+.pj-card__img--1 { background-image: linear-gradient(145deg,#0D3B5E 0%,#04101A 100%); }
+.pj-card__img--2 { background-image: linear-gradient(145deg,#071828 0%,#0D3B5E 100%); }
+.pj-card__img--3 { background-image: linear-gradient(145deg,#1A5585 0%,#04101A 100%); }
+.pj-card__img--4 { background-image: linear-gradient(145deg,#0A2A40 0%,#04101A 100%); }
+.pj-card__img--5 { background-image: linear-gradient(145deg,#071C30 0%,#1A5585 100%); }
+.pj-card__img--6 { background-image: linear-gradient(145deg,#0D3B5E 0%,#071828 100%); }
+
+.pj-card__overlay {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(to top, rgba(4,16,26,0.92) 0%, rgba(4,16,26,0.2) 70%, transparent 100%);
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 28px 24px;
+  transition: background 0.4s;
+}
+
+/* وضعیت badge */
+.pj-card__status {
+  position: absolute; top: 18px; right: 18px; z-index: 2;
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.58rem; font-weight: 600; letter-spacing: 0.16em;
+  text-transform: uppercase; padding: 5px 10px; border-radius: 4px;
+}
+.pj-card__status--ongoing {
+  background: rgba(34,197,94,0.12);
+  color: #22C55E;
+  border: 1px solid rgba(34,197,94,0.25);
+}
+.pj-card__status--ongoing::before {
+  content: ''; width: 5px; height: 5px; border-radius: 50%;
+  background: #22C55E; box-shadow: 0 0 5px rgba(34,197,94,0.6);
+  animation: pLivePulse 2s ease-in-out infinite;
+}
+.pj-card__status--completed {
+  background: rgba(245,200,0,0.1);
+  color: var(--yellow);
+  border: 1px solid rgba(245,200,0,0.22);
+}
+
+.pj-card__cat {
+  font-size: 0.6rem; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--yellow); margin-bottom: 8px;
+}
+.pj-card__title {
+  font-size: 1rem; font-weight: 700;
+  color: var(--white); line-height: 1.4; margin-bottom: 10px;
+}
+.pj-card--featured .pj-card__title { font-size: 1.3rem; }
+.pj-card__meta {
+  display: flex; gap: 8px; flex-wrap: wrap;
+  font-size: 0.68rem; color: rgba(255,255,255,0.38);
+}
+
+/* progress bar برای ongoing */
+.pj-card__progress {
+  margin-top: 12px;
+}
+.pj-card__progress-bar {
+  height: 2px; background: rgba(255,255,255,0.1); border-radius: 2px; overflow: hidden;
+}
+.pj-card__progress-fill {
+  height: 100%; background: var(--yellow);
+  border-radius: 2px;
+  box-shadow: 1px 0 8px rgba(245,200,0,0.4);
+}
+.pj-card__progress-lbl {
+  font-size: 0.6rem; color: rgba(255,255,255,0.3);
+  margin-top: 5px; letter-spacing: 0.1em;
+  display: flex; justify-content: space-between;
+}
+
+/* completed cards — light bg */
+.projects-section--completed .pj-card {
+  background: white;
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 4px 20px rgba(13,59,94,0.08);
+}
+.projects-section--completed .pj-card__overlay {
+  background: linear-gradient(to top, rgba(4,16,26,0.88) 0%, rgba(4,16,26,0.15) 60%, transparent 100%);
+}
+
+/* =====================================================
+   CTA BAND
+===================================================== */
+.projects-cta-band {
+  padding: 80px 0;
+  background: var(--steel-900);
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+.projects-cta-band__label { margin-bottom: 20px; justify-content: center; }
+.projects-cta-band__title {
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 200; color: var(--white);
+  margin-bottom: 32px; line-height: 1.4;
+}
+.projects-cta-band__title strong {
+  font-weight: 900;
+  background: var(--metallic-blue);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.projects-cta-band__btns { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+@media (max-width: 1100px) {
+  .pj-grid { grid-template-columns: 1fr 1fr; }
+  .pj-card--featured { grid-column: span 2; }
+}
+
+@media (max-width: 768px) {
+  .pj-grid { grid-template-columns: 1fr; }
+  .pj-card--featured { grid-column: span 1; }
+  .projects-hero__stats { display: none; }
+  .projects-hero__content { padding-bottom: 100px; }
+  .pf-btn { padding: 14px 20px; }
+  .projects-breadcrumb { right: 24px; }
+}

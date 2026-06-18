@@ -1,0 +1,726 @@
+/* ===================================================
+   CONCRETE.CSS — اختصاصی صفحه سازه‌های بتنی
+   وابسته به style.css و توکن‌های ریشه آن
+   پالت: بتن (گرم/خاکی) به جای فولاد (آبی)
+=================================================== */
+
+/* =====================================================
+   توکن‌های اختصاصی بتن
+===================================================== */
+:root {
+  --concrete-50:   #FAF7F2;
+  --concrete-100:  #F0E8D8;
+  --concrete-200:  #D9C9A8;
+  --concrete-400:  #B49A6A;
+  --concrete-500:  #8F7040;
+  --concrete-600:  #6B5025;
+  --concrete-700:  #3D2D10;
+  --concrete-900:  #1A1208;
+  --amber:         #D4A020;
+  --amber-glow:    rgba(212,160,32,0.18);
+  --amber-glow-strong: rgba(212,160,32,0.38);
+  --concrete-grad: linear-gradient(135deg,#C8A96E 0%,#A07840 30%,#6B5025 65%,#3D2D10 100%);
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+.cs-btn-primary {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 28px;
+  background: var(--amber);
+  color: #1A1208;
+  font-size: 0.8rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  border-radius: 3px; border: none;
+  transition: background 0.3s, box-shadow 0.3s, transform 0.25s;
+  box-shadow: 0 8px 28px rgba(212,160,32,0.3);
+}
+.cs-btn-primary svg {
+  width: 16px; height: 16px;
+  stroke: #1A1208; fill: none; stroke-width: 1.8;
+  flex-shrink: 0;
+}
+.cs-btn-primary:hover {
+  background: #e0b030;
+  box-shadow: 0 12px 40px rgba(212,160,32,0.45);
+  transform: translateY(-2px);
+}
+
+.cs-btn-ghost {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 13px 24px;
+  color: rgba(255,255,255,0.6);
+  font-size: 0.8rem; font-weight: 500;
+  letter-spacing: 0.1em;
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 3px;
+  transition: color 0.3s, border-color 0.3s;
+}
+.cs-btn-ghost svg {
+  width: 15px; height: 15px;
+  stroke: currentColor; fill: none; stroke-width: 1.8;
+}
+.cs-btn-ghost:hover {
+  color: var(--white);
+  border-color: rgba(255,255,255,0.4);
+}
+
+/* =====================================================
+   PAGE HERO
+===================================================== */
+.cs-hero {
+  position: relative;
+  width: 100%; min-height: 100vh;
+  overflow: hidden;
+  background: var(--concrete-900);
+  display: flex; align-items: center;
+}
+
+.cs-hero__bg {
+  position: absolute; inset: 0; z-index: 0;
+  background:
+    url('images/concrete-hero.jpg') center / cover no-repeat,
+    linear-gradient(155deg, #3D2D10 0%, #1A1208 50%, #0A0804 100%);
+  transform: scale(1.03);
+}
+
+/* override default overlay — warm tone */
+.cs-hero__overlay {
+  background:
+    linear-gradient(to bottom,
+      rgba(26,18,8,0.78) 0%,
+      rgba(26,18,8,0.22) 25%,
+      rgba(26,18,8,0.18) 50%,
+      rgba(26,18,8,0.62) 72%,
+      rgba(26,18,8,0.97) 100%
+    ),
+    linear-gradient(to right,
+      rgba(26,18,8,0.68) 0%,
+      transparent 32%,
+      transparent 68%,
+      rgba(26,18,8,0.68) 100%
+    ) !important;
+}
+
+/* Particle dots — concrete texture feel */
+.cs-hero__particles {
+  position: absolute; inset: 0; z-index: 2; pointer-events: none;
+}
+.cs-hero__particles span {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(212,160,32,0.06);
+  animation: csFloat 8s ease-in-out infinite;
+}
+.cs-hero__particles span:nth-child(1) { width:280px;height:280px;top:10%;left:15%;animation-delay:0s; }
+.cs-hero__particles span:nth-child(2) { width:160px;height:160px;top:55%;left:5%;animation-delay:2s; }
+.cs-hero__particles span:nth-child(3) { width:200px;height:200px;top:20%;right:8%;animation-delay:4s; }
+.cs-hero__particles span:nth-child(4) { width:100px;height:100px;top:70%;right:18%;animation-delay:1.5s; }
+.cs-hero__particles span:nth-child(5) { width:340px;height:340px;top:-5%;right:30%;animation-delay:3s;background:rgba(180,140,80,0.03); }
+.cs-hero__particles span:nth-child(6) { width:80px;height:80px;top:80%;left:40%;animation-delay:5s; }
+
+@keyframes csFloat {
+  0%,100% { transform: translateY(0) scale(1); opacity: 0.6; }
+  50%      { transform: translateY(-18px) scale(1.04); opacity: 1; }
+}
+
+/* Breadcrumb */
+.cs-breadcrumb {
+  position: absolute;
+  top: calc(var(--nav-height) + 20px);
+  right: clamp(40px, 8vw, 160px);
+  z-index: 10;
+  display: flex; align-items: center; gap: 6px;
+  font-size: 0.7rem; color: rgba(255,255,255,0.32);
+  letter-spacing: 0.08em;
+}
+.cs-breadcrumb a { color: rgba(255,255,255,0.48); transition: color 0.3s; }
+.cs-breadcrumb a:hover { color: var(--amber); }
+.cs-breadcrumb__sep { display: flex; width: 14px; height: 14px; color: rgba(255,255,255,0.18); }
+.cs-breadcrumb__sep svg { width: 100%; height: 100%; }
+
+/* Hero content */
+.cs-hero__content {
+  position: relative; z-index: 5;
+  padding: calc(var(--nav-height) + 80px) clamp(40px, 8vw, 160px) 240px;
+  max-width: 760px; direction: rtl;
+}
+
+.cs-hero__tag {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 0.68rem; font-weight: 600; letter-spacing: 0.28em;
+  text-transform: uppercase; color: var(--amber);
+  margin-bottom: 22px;
+  border: 1px solid rgba(212,160,32,0.22);
+  padding: 7px 14px; border-radius: 2px;
+  background: rgba(212,160,32,0.06);
+}
+.cs-hero__tag svg {
+  width: 14px; height: 14px;
+  stroke: var(--amber); fill: none; stroke-width: 1.5;
+}
+
+.cs-hero__title {
+  display: flex; flex-direction: column;
+  gap: 4px; margin-bottom: 28px;
+}
+.cs-hero__title-light {
+  font-size: clamp(1rem, 1.4vw, 1.4rem);
+  font-weight: 300; color: rgba(255,255,255,0.48);
+  letter-spacing: 0.08em;
+}
+.cs-hero__title-bold {
+  font-size: clamp(2.8rem, 5vw, 5.5rem);
+  font-weight: 900; line-height: 0.95;
+  letter-spacing: -0.03em;
+  background: linear-gradient(110deg, #fff 0%, #F5E8C4 35%, #D4A020 70%, #C08010 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cs-hero__desc {
+  font-size: clamp(0.85rem, 0.95vw, 0.95rem);
+  color: rgba(255,255,255,0.46); line-height: 2;
+  max-width: 520px; margin-bottom: 38px;
+  background: rgba(26,18,8,0.42);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  padding: 14px 22px; border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.cs-hero__ctas { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+
+/* Spec badges bar */
+.cs-hero__specs {
+  position: absolute; bottom: 0; left: 0; right: 0; z-index: 6;
+  display: flex;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  background: rgba(26,18,8,0.78);
+  backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+  justify-content: center;
+}
+.cs-spec-badge {
+  flex: 1; max-width: 200px;
+  padding: 18px 24px;
+  border-left: 1px solid rgba(255,255,255,0.06);
+  text-align: center; transition: background 0.3s;
+}
+.cs-spec-badge:last-child { border-left: none; }
+.cs-spec-badge:hover { background: rgba(212,160,32,0.05); }
+.cs-spec-badge__val {
+  font-size: 1.1rem; font-weight: 800; color: var(--white);
+  letter-spacing: 0.04em; line-height: 1;
+}
+.cs-spec-badge__lbl {
+  font-size: 0.58rem; color: rgba(255,255,255,0.3);
+  letter-spacing: 0.18em; text-transform: uppercase; margin-top: 5px;
+}
+
+/* Scroll cue */
+.cs-scroll-cue {
+  position: absolute; bottom: 100px; left: 50%;
+  transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  z-index: 6;
+}
+.cs-scroll-line {
+  width: 1px; height: 48px;
+  background: linear-gradient(to bottom, rgba(212,160,32,0.6), transparent);
+  animation: csScrollLine 1.8s ease-in-out infinite;
+}
+@keyframes csScrollLine {
+  0%   { opacity:0; transform:scaleY(0); transform-origin:top; }
+  50%  { opacity:1; transform:scaleY(1); transform-origin:top; }
+  100% { opacity:0; transform:scaleY(1); transform-origin:bottom; }
+}
+
+/* =====================================================
+   INTRO
+===================================================== */
+.cs-intro {
+  padding: var(--section-pad) 0;
+  background: var(--concrete-50);
+}
+
+.cs-intro__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem; align-items: center;
+}
+
+.cs-intro__body {
+  font-size: 1rem; color: var(--text-mid);
+  line-height: 2; margin: 20px 0 28px;
+}
+
+.cs-intro__feats { display: flex; flex-direction: column; gap: 12px; }
+.cs-intro__feat {
+  display: flex; align-items: center; gap: 12px;
+  font-size: 0.88rem; color: var(--text-mid); font-weight: 500;
+}
+.cs-intro__feat svg {
+  width: 18px; height: 18px;
+  stroke: var(--amber); flex-shrink: 0;
+}
+
+/* Technical drawing */
+.cs-intro__drawing {
+  background: var(--concrete-900);
+  border: 1px solid rgba(180,140,80,0.18);
+  border-radius: var(--card-radius);
+  padding: 32px; position: relative; overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+.cs-intro__drawing::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(180,140,80,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(180,140,80,0.04) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+}
+.cs-intro__drawing svg { width: 100%; height: auto; display: block; position: relative; z-index: 1; }
+.cs-intro__drawing-label {
+  text-align: center;
+  font-size: 0.6rem; letter-spacing: 0.25em;
+  color: rgba(212,160,32,0.35); text-transform: uppercase;
+  margin-top: 16px; font-family: 'Courier New', monospace;
+}
+
+/* =====================================================
+   STRUCTURE TYPES
+===================================================== */
+.cs-types {
+  padding: var(--section-pad) 0;
+  background: var(--white);
+}
+.cs-types__header { margin-bottom: 60px; }
+
+.cs-types__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.cs-type-card {
+  background: var(--concrete-50);
+  border: 1px solid rgba(180,140,80,0.12);
+  border-radius: var(--card-radius);
+  padding: 32px 28px;
+  position: relative; overflow: hidden;
+  transition: box-shadow 0.4s, transform 0.4s, border-color 0.4s;
+}
+.cs-type-card::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(to right, transparent, var(--amber), transparent);
+  opacity: 0; transition: opacity 0.4s;
+}
+.cs-type-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 64px rgba(61,45,16,0.12);
+  border-color: rgba(212,160,32,0.22);
+}
+.cs-type-card:hover::after { opacity: 1; }
+
+.cs-type-card__icon {
+  width: 52px; height: 52px;
+  background: linear-gradient(135deg, var(--concrete-700), var(--concrete-900));
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px;
+  border: 1px solid rgba(180,140,80,0.2);
+}
+.cs-type-card__icon svg { width: 26px; height: 26px; stroke: var(--amber); fill: none; }
+
+.cs-type-card__num {
+  font-size: 0.62rem; font-weight: 700;
+  letter-spacing: 0.25em; color: var(--amber);
+  margin-bottom: 10px; font-family: 'Courier New', monospace;
+}
+
+.cs-type-card__title {
+  font-size: 1.05rem; font-weight: 700;
+  color: var(--text-dark); margin-bottom: 10px; line-height: 1.4;
+}
+
+.cs-type-card__desc {
+  font-size: 0.82rem; color: var(--text-light);
+  line-height: 1.85; margin-bottom: 20px;
+}
+
+.cs-type-card__tag {
+  display: inline-block;
+  font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--concrete-400);
+  background: rgba(180,140,80,0.1);
+  border: 1px solid rgba(180,140,80,0.2);
+  padding: 4px 10px; border-radius: 3px;
+  font-family: 'Courier New', monospace;
+}
+
+/* =====================================================
+   PROCESS
+===================================================== */
+.cs-process {
+  padding: var(--section-pad) 0;
+  position: relative; overflow: hidden;
+}
+
+.cs-process__bg-strip {
+  position: absolute; inset: 0;
+  background: var(--concrete-50);
+  clip-path: polygon(0 0, 100% 6%, 100% 94%, 0 100%);
+}
+
+.cs-process__header { margin-bottom: 64px; position: relative; z-index: 1; }
+
+.cs-process__steps {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  position: relative; z-index: 1;
+}
+
+/* horizontal layout */
+.cs-step {
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center; position: relative;
+}
+
+.cs-step__connector {
+  position: absolute;
+  top: 22px; left: 50%; right: -50%;
+  height: 1px;
+  background: linear-gradient(to right, var(--amber), rgba(212,160,32,0.15));
+  z-index: 0;
+}
+.cs-step__connector--last { display: none; }
+
+.cs-step__circle {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--white);
+  border: 1.5px solid var(--amber);
+  display: flex; align-items: center; justify-content: center;
+  position: relative; z-index: 1; flex-shrink: 0;
+  margin-bottom: 20px;
+  box-shadow: 0 0 18px rgba(212,160,32,0.18);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+.cs-step__circle:hover {
+  background: rgba(212,160,32,0.08);
+  box-shadow: 0 0 28px rgba(212,160,32,0.3);
+}
+.cs-step__circle svg {
+  width: 18px; height: 18px;
+  stroke: var(--amber); fill: none;
+}
+
+.cs-step__body { padding: 0 10px; }
+
+.cs-step__num {
+  font-size: 0.6rem; font-weight: 700;
+  letter-spacing: 0.2em; color: var(--amber);
+  margin-bottom: 6px; font-family: 'Courier New', monospace;
+}
+
+.cs-step__title {
+  font-size: 0.88rem; font-weight: 700;
+  color: var(--text-dark); margin-bottom: 8px; line-height: 1.4;
+}
+
+.cs-step__desc {
+  font-size: 0.75rem; color: var(--text-light); line-height: 1.8;
+}
+
+/* =====================================================
+   SPECS SECTION
+===================================================== */
+.cs-specs-section {
+  padding: var(--section-pad) 0;
+  background: var(--white);
+}
+.cs-specs-section__header { margin-bottom: 56px; }
+
+.cs-caps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px; margin-bottom: 48px;
+}
+
+.cs-cap {
+  background: var(--concrete-50);
+  border: 1px solid rgba(180,140,80,0.14);
+  border-radius: var(--card-radius);
+  padding: 32px 20px; text-align: center;
+  transition: box-shadow 0.35s, transform 0.35s;
+}
+.cs-cap:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(61,45,16,0.1);
+}
+
+.cs-cap__icon {
+  width: 44px; height: 44px;
+  border: 1px solid rgba(212,160,32,0.22);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 18px;
+  background: rgba(212,160,32,0.06);
+}
+.cs-cap__icon svg { width: 20px; height: 20px; stroke: var(--amber); }
+
+.cs-cap__val {
+  font-size: 2.2rem; font-weight: 900;
+  color: var(--text-dark); line-height: 1; margin-bottom: 8px;
+}
+.cs-cap__val span {
+  font-size: 0.9rem; font-weight: 400;
+  color: var(--text-light); margin-right: 4px;
+}
+.cs-cap__lbl {
+  font-size: 0.68rem; color: var(--text-light);
+  letter-spacing: 0.12em; line-height: 1.5;
+}
+
+/* Table */
+.cs-table-wrap {
+  border: 1px solid rgba(180,140,80,0.15);
+  border-radius: var(--card-radius); overflow: hidden;
+}
+.cs-table-label {
+  padding: 14px 24px;
+  font-size: 0.68rem; font-weight: 600;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--text-light);
+  background: var(--concrete-50);
+  border-bottom: 1px solid rgba(180,140,80,0.12);
+}
+.cs-table {
+  width: 100%; border-collapse: collapse; direction: rtl;
+}
+.cs-table thead tr { background: rgba(180,140,80,0.07); }
+.cs-table th {
+  padding: 14px 20px;
+  font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.1em; text-align: right;
+  color: var(--text-mid); text-transform: uppercase;
+}
+.cs-table td {
+  padding: 14px 20px;
+  font-size: 0.83rem; color: var(--text-dark);
+  border-top: 1px solid rgba(180,140,80,0.08);
+  font-family: 'Courier New', monospace;
+}
+.cs-table tbody tr:hover { background: rgba(212,160,32,0.04); }
+
+/* =====================================================
+   PROJECTS
+===================================================== */
+.cs-projects {
+  padding: var(--section-pad) 0;
+  background: var(--concrete-50);
+}
+.cs-projects__header { margin-bottom: 52px; }
+
+.cs-projects__grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 16px;
+}
+
+.cs-proj-card {
+  position: relative;
+  border-radius: var(--card-radius); overflow: hidden;
+  min-height: 340px;
+  background: var(--concrete-900);
+  transition: transform 0.4s var(--ease-smooth);
+}
+.cs-proj-card:hover { transform: translateY(-6px); }
+.cs-proj-card:hover .cs-proj-card__overlay {
+  background: linear-gradient(to top, rgba(26,18,8,0.97) 0%, rgba(26,18,8,0.5) 100%);
+}
+
+.cs-proj-card__img {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  transition: transform 0.6s var(--ease-slow);
+}
+.cs-proj-card:hover .cs-proj-card__img { transform: scale(1.06); }
+
+.cs-proj-card__img--1 {
+  background-image: url('images/concrete-1.jpg'),
+    linear-gradient(145deg, #3D2D10 0%, #1A1208 100%);
+}
+.cs-proj-card__img--2 {
+  background-image: url('images/concrete-2.jpg'),
+    linear-gradient(145deg, #2A1E08 0%, #3D2D10 100%);
+}
+.cs-proj-card__img--3 {
+  background-image: url('images/concrete-3.jpg'),
+    linear-gradient(145deg, #4A3818 0%, #1A1208 100%);
+}
+
+.cs-proj-card__overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(26,18,8,0.92) 0%, rgba(26,18,8,0.2) 70%, transparent 100%);
+  z-index: 1;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 28px 24px; transition: background 0.4s;
+}
+
+.cs-proj-card__cat {
+  font-size: 0.6rem; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--amber); margin-bottom: 8px;
+}
+.cs-proj-card__title {
+  font-size: 1rem; font-weight: 700;
+  color: var(--white); line-height: 1.4; margin-bottom: 10px;
+}
+.cs-proj-card__meta {
+  display: flex; gap: 8px; flex-wrap: wrap;
+  font-size: 0.68rem; color: rgba(255,255,255,0.38);
+}
+
+.cs-projects__cta { text-align: center; margin-top: 40px; }
+
+/* =====================================================
+   CONTACT
+===================================================== */
+.cs-contact {
+  padding: var(--section-pad) 0;
+  background: var(--white);
+}
+
+.cs-contact__card {
+  background: var(--concrete-900);
+  border-radius: 20px; overflow: hidden;
+  position: relative;
+  display: grid; grid-template-columns: 1fr 1.2fr;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid rgba(180,140,80,0.1);
+}
+
+.cs-contact__deco {
+  position: absolute;
+  width: 500px; height: 500px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(212,160,32,0.06), transparent 70%);
+  top: -150px; right: -150px; pointer-events: none;
+}
+
+.cs-contact__text {
+  padding: 60px 52px;
+  position: relative; z-index: 1;
+  border-left: 1px solid rgba(255,255,255,0.05);
+  display: flex; flex-direction: column; justify-content: center;
+}
+
+.cs-contact__title {
+  font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+  font-weight: 200; color: var(--white); line-height: 1.4;
+  margin: 18px 0 20px;
+}
+.cs-contact__title strong {
+  font-weight: 900;
+  background: var(--concrete-grad);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cs-contact__sub {
+  font-size: 0.85rem; color: rgba(255,255,255,0.36); line-height: 1.9;
+  margin-bottom: 28px;
+}
+
+.cs-contact__certs {
+  display: flex; gap: 14px; flex-wrap: wrap;
+}
+.cs-cert {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-size: 0.65rem; letter-spacing: 0.15em;
+  color: var(--amber);
+  background: rgba(212,160,32,0.07);
+  border: 1px solid rgba(212,160,32,0.18);
+  padding: 6px 12px; border-radius: 3px;
+  text-transform: uppercase;
+}
+.cs-cert svg { width: 12px; height: 12px; stroke: var(--amber); fill: none; }
+
+/* Form */
+.cs-contact__form {
+  padding: 52px 48px; position: relative; z-index: 1;
+  display: flex; flex-direction: column; gap: 16px;
+}
+
+.cs-form-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+}
+
+.cs-form-group { display: flex; flex-direction: column; gap: 7px; }
+.cs-form-group label {
+  font-size: 0.7rem; font-weight: 600;
+  letter-spacing: 0.1em; color: rgba(255,255,255,0.38);
+  text-transform: uppercase;
+}
+.cs-form-group input,
+.cs-form-group select,
+.cs-form-group textarea {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 6px; padding: 11px 14px;
+  font-family: 'Vazirmatn', sans-serif;
+  font-size: 0.85rem; color: var(--white);
+  direction: rtl; outline: none;
+  transition: border-color 0.3s, background 0.3s;
+}
+.cs-form-group input::placeholder,
+.cs-form-group textarea::placeholder { color: rgba(255,255,255,0.18); }
+.cs-form-group input:focus,
+.cs-form-group select:focus,
+.cs-form-group textarea:focus {
+  border-color: rgba(212,160,32,0.4);
+  background: rgba(255,255,255,0.06);
+}
+.cs-form-group select option { background: var(--concrete-900); color: var(--white); }
+.cs-form-group textarea { resize: vertical; min-height: 90px; }
+
+.cs-contact__submit { width: 100%; justify-content: center; }
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+@media (max-width: 1100px) {
+  .cs-types__grid { grid-template-columns: repeat(2, 1fr); }
+  .cs-caps-grid { grid-template-columns: repeat(2, 1fr); }
+  .cs-projects__grid { grid-template-columns: 1fr 1fr; }
+  .cs-proj-card--featured { grid-column: span 2; }
+  .cs-process__steps { grid-template-columns: 1fr; gap: 32px; }
+  .cs-step { flex-direction: row; text-align: right; gap: 20px; }
+  .cs-step__circle { flex-shrink: 0; margin-bottom: 0; }
+  .cs-step__connector { display: none; }
+  .cs-step__body { padding: 0; }
+}
+
+@media (max-width: 900px) {
+  .cs-intro__grid { grid-template-columns: 1fr; gap: 3rem; }
+  .cs-contact__card { grid-template-columns: 1fr; }
+  .cs-contact__text {
+    border-left: none;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+}
+
+@media (max-width: 768px) {
+  .cs-types__grid { grid-template-columns: 1fr; }
+  .cs-projects__grid { grid-template-columns: 1fr; }
+  .cs-proj-card--featured { grid-column: span 1; }
+  .cs-caps-grid { grid-template-columns: 1fr 1fr; }
+  .cs-form-row { grid-template-columns: 1fr; }
+  .cs-hero__specs { display: none; }
+  .cs-hero__content { padding-bottom: 100px; }
+  .cs-breadcrumb { right: 24px; }
+  .cs-contact__text { padding: 40px 28px; }
+  .cs-contact__form { padding: 36px 28px; }
+}

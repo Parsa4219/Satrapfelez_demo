@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>پروژه‌ها | ساتراپ فلز</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="projects.css">
+</head>
+<body>
+
+<div class="autocad-cursor__crosshair"></div>
+<div class="autocad-cursor__pickbox"></div>
+
+<div class="scroll-progress">
+  <div class="scroll-progress__bar" id="scrollBar"></div>
+</div>
+
+<!-- ========== NAVIGATION ========== -->
+<nav class="nav" id="mainNav">
+  <ul class="nav__links">
+    <li><a href="#contact" class="nav__cta"><span>تماس با ما</span></a></li>
+    <li><a href="index.html">صفحه اصلی</a></li>
+    <li><a href="concrete-structure.html">سازه‌های بتنی</a></li>
+    <li><a href="metal-structure.html">سازه‌های فلزی</a></li>
+    <li><a href="#" style="color:var(--yellow)">پروژه‌ها</a></li>
+    <li><a href="#">وبلاگ</a></li>
+  </ul>
+  <div class="nav__logo">
+    <img
+      src="images/RTL_LOGO_transparent.png"
+      alt="ساتراپ فلز"
+      class="nav__logo-img"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+    >
+    <div class="nav__logo-mark" style="display:none;">
+      <svg viewBox="0 0 24 24"><path d="M3 21h18M3 7l9-4 9 4M4 7v14M20 7v14M8 7v14M16 7v14M12 3v18M8 11h8M8 15h8"/></svg>
+    </div>
+    <div class="nav__logo-text">
+      <span class="nav__logo-name">ساتراپ فلز</span>
+      <span class="nav__logo-sub">Satrap Felez Co.</span>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="projects-hero" id="hero">
+  <div class="projects-hero__bg"></div>
+  <div class="projects-hero__overlay"></div>
+  <div class="projects-hero__grid"></div>
+  <div class="projects-hero__glow"></div>
+
+  <!-- site plan schematic -->
+  <div class="projects-hero__schematic">
+    <svg viewBox="0 0 500 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- grid -->
+      <line x1="0" y1="80"  x2="500" y2="80"  stroke="rgba(74,142,194,.35)" stroke-width=".5"/>
+      <line x1="0" y1="200" x2="500" y2="200" stroke="rgba(74,142,194,.35)" stroke-width=".5"/>
+      <line x1="0" y1="320" x2="500" y2="320" stroke="rgba(74,142,194,.35)" stroke-width=".5"/>
+      <line x1="0" y1="440" x2="500" y2="440" stroke="rgba(74,142,194,.35)" stroke-width=".5"/>
+      <line x1="80"  y1="0" x2="80"  y2="600" stroke="rgba(74,142,194,.35)" stroke-width=".5"/>
+      <line x1="200" y1="0" x2="200" y2="600" stroke="rgba(74,142,194,.35)" stroke-width=".5"/>
+      <line x1="320" y1="0" x2="320" y2="600" stroke="rgba(74,142,194,.35)" stroke-width=".5"/>
+      <line x1="440" y1="0" x2="440" y2="600" stroke="rgba(74,142,194,.35)" stroke-width=".5"/>
+      <!-- building footprints -->
+      <rect x="90"  y="90"  width="90"  height="90"  stroke="rgba(74,142,194,.7)"  stroke-width="1.2" fill="rgba(74,142,194,.06)"/>
+      <rect x="210" y="90"  width="110" height="70"  stroke="rgba(245,200,0,.5)"   stroke-width="1"   fill="rgba(245,200,0,.04)"/>
+      <rect x="90"  y="210" width="230" height="80"  stroke="rgba(74,142,194,.7)"  stroke-width="1.2" fill="rgba(74,142,194,.05)"/>
+      <rect x="350" y="210" width="100" height="130" stroke="rgba(74,142,194,.5)"  stroke-width="1"   fill="rgba(74,142,194,.04)"/>
+      <rect x="90"  y="330" width="70"  height="100" stroke="rgba(245,200,0,.4)"   stroke-width="1"   fill="rgba(245,200,0,.03)"/>
+      <rect x="180" y="330" width="150" height="60"  stroke="rgba(74,142,194,.55)" stroke-width="1"   fill="rgba(74,142,194,.04)"/>
+      <rect x="180" y="410" width="150" height="60"  stroke="rgba(74,142,194,.4)"  stroke-width=".8"  fill="rgba(74,142,194,.03)"/>
+      <!-- dim marks -->
+      <line x1="90"  y1="72"  x2="180" y2="72"  stroke="rgba(245,200,0,.3)" stroke-width=".7"/>
+      <line x1="90"  y1="68"  x2="90"  y2="76"  stroke="rgba(245,200,0,.3)" stroke-width=".7"/>
+      <line x1="180" y1="68"  x2="180" y2="76"  stroke="rgba(245,200,0,.3)" stroke-width=".7"/>
+      <text x="135" y="66" fill="rgba(245,200,0,.35)" font-size="8" text-anchor="middle" font-family="monospace">48m</text>
+      <!-- labels -->
+      <text x="135" y="138" fill="rgba(74,142,194,.5)"  font-size="7.5" text-anchor="middle" font-family="monospace">BLOCK A</text>
+      <text x="265" y="128" fill="rgba(245,200,0,.4)"   font-size="7.5" text-anchor="middle" font-family="monospace">BLOCK B</text>
+      <text x="205" y="253" fill="rgba(74,142,194,.5)"  font-size="7.5" text-anchor="middle" font-family="monospace">BLOCK C — INDUSTRIAL</text>
+    </svg>
+  </div>
+
+  <div class="projects-breadcrumb">
+    <a href="index.html">خانه</a>
+    <span>/</span>
+    <span>پروژه‌ها</span>
+  </div>
+
+  <div class="projects-hero__content">
+    <div class="projects-hero__tag reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+        <polyline points="9,22 9,12 15,12 15,22"/>
+      </svg>
+      پورتفولیو پروژه‌ها
+    </div>
+    <div class="projects-hero__title reveal">
+      <span class="projects-hero__title-light">ساخته‌هایی که</span>
+      <span class="projects-hero__title-bold">ماندگارند</span>
+    </div>
+    <p class="projects-hero__desc reveal">
+      از سوله‌های صنعتی تا سازه‌های پیچیده پتروشیمی — هر پروژه در ساتراپ فلز ترکیبی از دقت مهندسی، کیفیت ساخت و اجرای استاندارد جهانی است.
+    </p>
+    <div class="projects-hero__ctas reveal">
+      <a href="#ongoing" class="btn-primary">
+        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+        مشاهده پروژه‌ها
+      </a>
+      <a href="#contact" class="btn-ghost">
+        تماس با ما
+        <svg viewBox="0 0 24 24"><polyline points="6,9 12,15 18,9"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="projects-hero__stats">
+    <div class="projects-hero__stat">
+      <div class="projects-hero__stat-val">۳۵۰+</div>
+      <div class="projects-hero__stat-lbl">پروژه اجرا شده</div>
+    </div>
+    <div class="projects-hero__stat">
+      <div class="projects-hero__stat-val">۲۰+</div>
+      <div class="projects-hero__stat-lbl">سال تجربه</div>
+    </div>
+    <div class="projects-hero__stat">
+      <div class="projects-hero__stat-val">۱۸</div>
+      <div class="projects-hero__stat-lbl">استان کشور</div>
+    </div>
+    <div class="projects-hero__stat">
+      <div class="projects-hero__stat-val">۱۲</div>
+      <div class="projects-hero__stat-lbl">پروژه فعال</div>
+    </div>
+  </div>
+
+  <div class="projects-hero__scroll">
+    <div class="projects-hero__scroll-line"></div>
+    <span class="projects-hero__scroll-label">اسکرول</span>
+  </div>
+</section>
+
+<!-- ========== FILTER BAR ========== -->
+<div class="projects-filter" id="filterBar">
+  <div class="projects-filter__inner">
+
+    <!-- view toggles -->
+    <div class="pf-view">
+      <span class="pf-view-lbl">نمایش</span>
+      <button class="pf-view-btn active" id="viewGrid" title="شبکه">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+      </button>
+      <button class="pf-view-btn" id="viewList" title="لیست">
+        <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+
+    <div class="pf-sep"></div>
+
+    <!-- همه -->
+    <button class="pf-btn active" data-filter="all">
+      <div class="pf-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+      </div>
+      <span class="pf-label">همه پروژه‌ها</span>
+      <span class="pf-count">۳۵۰ پروژه</span>
+    </button>
+
+    <div class="pf-sep"></div>
+
+    <!-- در حال اجرا -->
+    <button class="pf-btn" data-filter="ongoing">
+      <div class="pf-live"></div>
+      <div class="pf-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+      </div>
+      <span class="pf-label">در حال اجرا</span>
+      <span class="pf-count">۱۲ فعال</span>
+    </button>
+
+    <div class="pf-sep"></div>
+
+    <!-- انجام شده -->
+    <button class="pf-btn" data-filter="completed">
+      <div class="pf-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="9,12 11,14 15,10"/></svg>
+      </div>
+      <span class="pf-label">انجام شده</span>
+      <span class="pf-count">۳۳۸ پروژه</span>
+    </button>
+
+  </div>
+</div>
+
+<!-- ========== پروژه‌های در حال اجرا ========== -->
+<section class="projects-section" id="ongoing">
+  <div class="container">
+    <div class="projects-section__header reveal">
+      <div class="section-label">ACTIVE PROJECTS</div>
+      <h2 class="section-title" style="color:var(--white)">پروژه‌های <span>در حال اجرا</span></h2>
+    </div>
+
+    <div class="pj-grid">
+
+      <div class="pj-card pj-card--featured reveal">
+        <div class="pj-card__img pj-card__img--1"></div>
+        <div class="pj-card__status pj-card__status--ongoing">در حال اجرا</div>
+        <div class="pj-card__overlay">
+          <div class="pj-card__cat">پتروشیمی</div>
+          <h3 class="pj-card__title">پالایشگاه جنوب — عسلویه</h3>
+          <div class="pj-card__meta">
+            <span>۲۸۰۰ تن فولاد</span>
+            <span>•</span>
+            <span>عسلویه</span>
+            <span>•</span>
+            <span>شروع ۱۴۰۳</span>
+          </div>
+          <div class="pj-card__progress">
+            <div class="pj-card__progress-bar">
+              <div class="pj-card__progress-fill" style="width:85%"></div>
+            </div>
+            <div class="pj-card__progress-lbl">
+              <span>پیشرفت پروژه</span>
+              <span>۸۵٪</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pj-card reveal reveal-delay-1">
+        <div class="pj-card__img pj-card__img--2"></div>
+        <div class="pj-card__status pj-card__status--ongoing">در حال اجرا</div>
+        <div class="pj-card__overlay">
+          <div class="pj-card__cat">اسکلت ساختمانی</div>
+          <h3 class="pj-card__title">برج اداری شمال تهران</h3>
+          <div class="pj-card__meta">
+            <span>۲۴ طبقه</span>
+            <span>•</span>
+            <span>تهران</span>
+          </div>
+          <div class="pj-card__progress">
+            <div class="pj-card__progress-bar">
+              <div class="pj-card__progress-fill" style="width:42%"></div>
+            </div>
+            <div class="pj-card__progress-lbl">
+              <span>پیشرفت پروژه</span>
+              <span>۴۲٪</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pj-card reveal reveal-delay-2">
+        <div class="pj-card__img pj-card__img--3"></div>
+        <div class="pj-card__status pj-card__status--ongoing">در حال اجرا</div>
+        <div class="pj-card__overlay">
+          <div class="pj-card__cat">سوله صنعتی</div>
+          <h3 class="pj-card__title">کارخانه قطعات خودرو اصفهان</h3>
+          <div class="pj-card__meta">
+            <span>دهانه ۵۴ متر</span>
+            <span>•</span>
+            <span>اصفهان</span>
+          </div>
+          <div class="pj-card__progress">
+            <div class="pj-card__progress-bar">
+              <div class="pj-card__progress-fill" style="width:67%"></div>
+            </div>
+            <div class="pj-card__progress-lbl">
+              <span>پیشرفت پروژه</span>
+              <span>۶۷٪</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== پروژه‌های انجام شده ========== -->
+<section class="projects-section projects-section--completed" id="completed">
+  <div class="container">
+    <div class="projects-section__header reveal">
+      <div class="section-label">COMPLETED</div>
+      <h2 class="section-title">پروژه‌های <span>انجام شده</span></h2>
+    </div>
+
+    <div class="pj-grid">
+
+      <div class="pj-card pj-card--featured reveal">
+        <div class="pj-card__img pj-card__img--4"></div>
+        <div class="pj-card__status pj-card__status--completed">تکمیل شده</div>
+        <div class="pj-card__overlay">
+          <div class="pj-card__cat">سوله صنعتی</div>
+          <h3 class="pj-card__title">سالن تولید فولاد مبارکه</h3>
+          <div class="pj-card__meta">
+            <span>دهانه ۴۸ متر</span>
+            <span>•</span>
+            <span>۱۲۰۰ تن فولاد</span>
+            <span>•</span>
+            <span>اصفهان · ۱۴۰۲</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pj-card reveal reveal-delay-1">
+        <div class="pj-card__img pj-card__img--5"></div>
+        <div class="pj-card__status pj-card__status--completed">تکمیل شده</div>
+        <div class="pj-card__overlay">
+          <div class="pj-card__cat">پتروشیمی</div>
+          <h3 class="pj-card__title">پایپ‌رک پتروشیمی پارس</h3>
+          <div class="pj-card__meta">
+            <span>۸۵۰ تن</span>
+            <span>•</span>
+            <span>عسلویه · ۱۴۰۱</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pj-card reveal reveal-delay-2">
+        <div class="pj-card__img pj-card__img--6"></div>
+        <div class="pj-card__status pj-card__status--completed">تکمیل شده</div>
+        <div class="pj-card__overlay">
+          <div class="pj-card__cat">اسکلت ساختمانی</div>
+          <h3 class="pj-card__title">برج اداری تجاری تهران</h3>
+          <div class="pj-card__meta">
+            <span>۲۲ طبقه</span>
+            <span>•</span>
+            <span>تهران · ۱۴۰۰</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== CTA BAND ========== -->
+<section class="projects-cta-band" id="contact">
+  <div class="container">
+    <div class="section-label projects-cta-band__label reveal">پروژه بعدی</div>
+    <h2 class="projects-cta-band__title reveal">
+      سازه بعدی شما را<br>
+      <strong>با هم می‌سازیم</strong>
+    </h2>
+    <div class="projects-cta-band__btns reveal">
+      <a href="index.html#contact" class="btn-primary">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.62A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+        مشاوره رایگان
+      </a>
+      <a href="metal-structure.html" class="btn-ghost">
+        خدمات ما
+        <svg viewBox="0 0 24 24"><polyline points="6,9 12,15 18,9"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer" id="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="footer__brand-logo">
+          <div class="footer__brand-logo-mark">
+            <svg viewBox="0 0 24 24" fill="white"><path d="M3 21h18M3 7l9-4 9 4M4 7v14M20 7v14M8 7v14M16 7v14M12 3v18M8 11h8M8 15h8"/></svg>
+          </div>
+          <div>
+            <div class="footer__brand-name">ساتراپ فلز</div>
+            <div class="footer__brand-sub">Satrap Felez Co.</div>
+          </div>
+        </div>
+        <p class="footer__tagline">سازنده آینده‌ای پایدار با فولاد و بتن، از ایران برای جهان.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="اینستاگرام"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" aria-label="لینکدین"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="#" aria-label="تلگرام"><svg viewBox="0 0 24 24"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">دسترسی سریع</div>
+        <ul class="footer__links">
+          <li><a href="index.html">صفحه اصلی</a></li>
+          <li><a href="#ongoing">پروژه‌های فعال</a></li>
+          <li><a href="#completed">پروژه‌های انجام شده</a></li>
+          <li><a href="metal-structure.html">سازه‌های فلزی</a></li>
+          <li><a href="concrete-structure.html">سازه‌های بتنی</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title">خدمات ما</div>
+        <ul class="footer__links">
+          <li><a href="#">طراحی سازه فولادی</a></li>
+          <li><a href="#">فابریکاسیون و ساخت</a></li>
+          <li><a href="#">نصب و برپاسازی</a></li>
+          <li><a href="#">سازه‌های بتنی</a></li>
+          <li><a href="#">مشاوره فنی</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title">ارتباط با ما</div>
+        <div class="footer__contact-item">
+          <div class="footer__contact-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.62A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg></div>
+          <div>
+            <div class="footer__contact-label">تلفن تماس</div>
+            <div class="footer__contact-val" style="direction:ltr;text-align:right;">۰۳۱ - ۳۴۵۶۷۸۹۰</div>
+          </div>
+        </div>
+        <div class="footer__contact-item">
+          <div class="footer__contact-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div>
+            <div class="footer__contact-label">ایمیل</div>
+            <div class="footer__contact-val" style="direction:ltr;text-align:right;">info@satrapfelez.ir</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copyright">© ۱۴۰۴ تمامی حقوق برای <strong>ساتراپ فلز</strong> محفوظ است.</p>
+      <div class="footer__badges">
+        <span class="footer__badge">ISO 9001</span>
+        <span class="footer__badge">ISO 3834</span>
+        <span class="footer__badge">HSE رتبه یک</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="custom.js"></script>
+<script>
+// Filter bar
+document.querySelectorAll('.pf-btn[data-filter]').forEach(btn => {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.pf-btn[data-filter]').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+    const f = this.dataset.filter;
+    const ongoing   = document.getElementById('ongoing');
+    const completed = document.getElementById('completed');
+    if (f === 'all')       { ongoing.style.display=''; completed.style.display=''; }
+    if (f === 'ongoing')   { ongoing.style.display=''; completed.style.display='none'; }
+    if (f === 'completed') { ongoing.style.display='none'; completed.style.display=''; }
+  });
+});
+
+// View toggle
+document.getElementById('viewGrid').addEventListener('click', function() {
+  this.classList.add('active');
+  document.getElementById('viewList').classList.remove('active');
+  document.querySelectorAll('.pj-grid').forEach(g => { g.style.gridTemplateColumns=''; });
+});
+document.getElementById('viewList').addEventListener('click', function() {
+  this.classList.add('active');
+  document.getElementById('viewGrid').classList.remove('active');
+  document.querySelectorAll('.pj-grid').forEach(g => {
+    g.style.gridTemplateColumns = '1fr';
+  });
+});
+</script>
+</body>
+</html>

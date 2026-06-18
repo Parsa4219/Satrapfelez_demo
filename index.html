@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ساتراپ فلز | سازه‌های فولادی برتر</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="storytelling-perf-hotfix.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+  <!-- CUSTOM CURSOR -->
+  <div class="autocad-cursor__crosshair"></div>
+  <div class="autocad-cursor__pickbox"></div>
+
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress">
+    <div class="scroll-progress__bar" id="scrollBar"></div>
+  </div>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="nav" id="mainNav">
+
+    <!-- LINKS — order:1 in CSS = rendered LEFT in non-RTL flex -->
+<ul class="nav__links">
+  <li><a href="#contact" class="nav__cta"><span>تماس با ما</span></a></li>
+  <li><a href="#footer">درباره ما</a></li>
+  <li><a href="projects.html">پروژه‌ها</a></li>
+  <li><a href="concrete-structure.html">سازه‌های بتنی</a></li>
+  <li><a href="metal-structure.html">سازه‌های فلزی</a></li>
+  <li><a href="#">وبلاگ</a></li>
+</ul>
+
+    <!-- LOGO — order:2 in CSS = rendered RIGHT -->
+    <div class="nav__logo">
+      <img
+        src="images/RTL_LOGO_transparent.png"
+        alt="ساتراپ فلز"
+        class="nav__logo-img"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+      >
+      <div class="nav__logo-mark" style="display:none;">
+        <svg viewBox="0 0 24 24"><path d="M3 21h18M3 7l9-4 9 4M4 7v14M20 7v14M8 7v14M16 7v14M12 3v18M8 11h8M8 15h8"/></svg>
+      </div>
+      <div class="nav__logo-text">
+        <span class="nav__logo-name">ساتراپ فلز</span>
+        <span class="nav__logo-sub">Satrap Felez Co.</span>
+      </div>
+    </div>
+
+  </nav>
+
+  <!-- ========== HERO — v3 EDITORIAL COMMAND CENTER ========== -->
+  <section class="hero" id="hero">
+
+    <!-- Background layers -->
+    <div class="hero__bg-photo"></div>
+    <div class="hero__bg-overlay"></div>
+    <div class="hero__bg-grid"></div>
+    <div class="hero__bg-glow"></div>
+    <div class="hero__bg-line"></div>
+
+    <!-- ── CONTENT ROW: text zone (right) + photo zone (left) ── -->
+    <div class="hero__content-wrapper">
+      <div class="hero__text">
+
+        <!-- Eyebrow: data-backed proof, not a claim -->
+        <div class="hero__eyebrow">
+          <span class="hero__eyebrow-dot"></span>
+          پیشرو در سازه‌های فولادی ایران — ۳۵۰+ پروژه
+        </div>
+
+        <!-- Headline: 3-weight system -->
+        <div class="hero__headline">
+          <span class="hero__h-sup">استحکام فولاد،</span>
+          <span class="hero__h-main">چشم‌انداز آینده</span>
+          <span class="hero__h-sub">
+            از <strong>طراحی</strong> تا <strong>تحویل کلید</strong> — با ضمانت ISO 9001
+          </span>
+        </div>
+
+        <!-- Value prop -->
+        <p class="hero__body-text">
+          ساتراپ فلز با بیش از دو دهه تخصص، سازه‌های فولادی منحصربه‌فردی می‌سازد که
+          دوام، زیبایی و نوآوری را در هم می‌آمیزند — برای صنعت، پتروشیمی و ساختمان.
+        </p>
+
+        <!-- CTAs -->
+        <div class="hero__cta-row">
+          <a href="#contact" class="btn-primary">
+            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+            مشاوره رایگان
+          </a>
+          <a href="#projects" class="btn-ghost">
+            مشاهده پروژه‌ها
+            <svg viewBox="0 0 24 24"><polyline points="6,9 12,15 18,9"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── PROOF BADGES — float in the photo zone (LEFT side) ── -->
+    <div class="hero__badges-zone">
+      <div class="hero__badge">
+        <div class="hero__badge-icon-wrap">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="hero__badge-info">
+          <div class="hero__badge-label">رتبه‌بندی ملی</div>
+          <div class="hero__badge-value">درجه یک ساخت</div>
+        </div>
+      </div>
+      <div class="hero__badge">
+        <div class="hero__badge-icon-wrap">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="hero__badge-info">
+          <div class="hero__badge-label">گواهینامه کیفیت</div>
+          <div class="hero__badge-value">ISO 9001 : 2015</div>
+        </div>
+      </div>
+      <div class="hero__badge">
+        <div class="hero__badge-icon-wrap">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+        </div>
+        <div class="hero__badge-info">
+          <div class="hero__badge-label">سابقه ایمنی HSE</div>
+          <div class="hero__badge-value">صفر حادثه — ۵ سال</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll cue -->
+    <div class="hero__scroll-cue">
+      <div class="hero__scroll-line"></div>
+      <span class="hero__scroll-label">اسکرول</span>
+    </div>
+
+  </section>
+
+
+  <!-- ========== SATRAP STORYTELLING ========== -->
+  <section class="storytelling" id="storytelling">
+    <div class="container">
+      <div class="storytelling__header reveal">
+        <div class="section-label">فلسفه ما</div>
+        <h2 class="section-title">ساتراپ، یک کلمه — <span>شش اصل</span></h2>
+        <p style="color: var(--text-light); margin-top: 16px; font-size: 1rem; max-width: 480px; margin-inline: auto;">هر حرف از نام ما، نمادی از تعهد ما به صنعت فولاد کشور است.</p>
+      </div>
+    </div>
+
+    <div class="satrap-blocks">
+
+      <!-- Block 1: س - سرعت -->
+      <div class="satrap-block reveal" data-progress="92">
+        <div class="satrap-block__visual">
+          <div class="satrap-block__bg"></div>
+          <div class="satrap-block__letter-bg">س</div>
+          <div class="satrap-block__icon-wrap">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+        </div>
+        <div class="satrap-block__content">
+          <span class="satrap-block__tag">اصل اول</span>
+          <div class="satrap-block__letter">س</div>
+          <h3 class="satrap-block__title">سرعت در <strong>اجرا</strong></h3>
+          <p class="satrap-block__desc">
+            با بهره‌گیری از فناوری‌های نوین جوشکاری و پیش‌فابریکاسیون، پروژه‌های شما را در کمترین زمان ممکن و بدون کوچکترین تأخیری به اتمام می‌رسانیم.
+          </p>
+          <div class="satrap-block__progress">
+            <div class="satrap-block__progress-bar">
+              <div class="satrap-block__progress-fill" style="--progress: 92%"></div>
+            </div>
+            <span class="satrap-block__progress-label">۹۲٪ تحویل به موقع</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Block 2: ا - استحکام -->
+      <div class="satrap-block reveal" data-progress="98">
+        <div class="satrap-block__content">
+          <span class="satrap-block__tag">اصل دوم</span>
+          <div class="satrap-block__letter">ا</div>
+          <h3 class="satrap-block__title">استحکام <strong>بی‌مانند</strong></h3>
+          <p class="satrap-block__desc">
+            مواد اولیه ما تنها از معتبرترین فولادسازان جهان تأمین می‌شود. هر وصله، هر جوش و هر اتصال تحت سخت‌ترین استانداردهای ایزو آزمون می‌بیند.
+          </p>
+          <div class="satrap-block__progress">
+            <div class="satrap-block__progress-bar">
+              <div class="satrap-block__progress-fill" style="--progress: 98%"></div>
+            </div>
+            <span class="satrap-block__progress-label">استاندارد ISO 9001</span>
+          </div>
+        </div>
+        <div class="satrap-block__visual">
+          <div class="satrap-block__bg"></div>
+          <div class="satrap-block__letter-bg">ا</div>
+          <div class="satrap-block__icon-wrap">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Block 3: ت - تخصص -->
+      <div class="satrap-block reveal" data-progress="85">
+        <div class="satrap-block__visual">
+          <div class="satrap-block__bg"></div>
+          <div class="satrap-block__letter-bg">ت</div>
+          <div class="satrap-block__icon-wrap">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+            </svg>
+          </div>
+        </div>
+        <div class="satrap-block__content">
+          <span class="satrap-block__tag">اصل سوم</span>
+          <div class="satrap-block__letter">ت</div>
+          <h3 class="satrap-block__title">تخصص <strong>مهندسی</strong></h3>
+          <p class="satrap-block__desc">
+            تیم مهندسین ارشد ما با مدارک بین‌المللی و تجربه در پروژه‌های پیچیده صنعتی، بهترین راه‌حل سازه‌ای را برای هر چالش طراحی می‌کنند.
+          </p>
+          <div class="satrap-block__progress">
+            <div class="satrap-block__progress-bar">
+              <div class="satrap-block__progress-fill" style="--progress: 85%"></div>
+            </div>
+            <span class="satrap-block__progress-label">۴۵ مهندس ارشد</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Block 4: ر - رضایت -->
+      <div class="satrap-block reveal" data-progress="96">
+        <div class="satrap-block__content">
+          <span class="satrap-block__tag">اصل چهارم</span>
+          <div class="satrap-block__letter">ر</div>
+          <h3 class="satrap-block__title">رضایت <strong>مشتری</strong></h3>
+          <p class="satrap-block__desc">
+            مشتری برای ما تنها یک قرارداد نیست — یک شریک بلندمدت است. از اولین جلسه طراحی تا سال‌ها پس از تحویل، همراه شما می‌مانیم.
+          </p>
+          <div class="satrap-block__progress">
+            <div class="satrap-block__progress-bar">
+              <div class="satrap-block__progress-fill" style="--progress: 96%"></div>
+            </div>
+            <span class="satrap-block__progress-label">۹۶٪ نرخ رضایت</span>
+          </div>
+        </div>
+        <div class="satrap-block__visual">
+          <div class="satrap-block__bg"></div>
+          <div class="satrap-block__letter-bg">ر</div>
+          <div class="satrap-block__icon-wrap">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Block 5: ا - ایمنی -->
+      <div class="satrap-block reveal" data-progress="100">
+        <div class="satrap-block__visual">
+          <div class="satrap-block__bg"></div>
+          <div class="satrap-block__letter-bg">ا</div>
+          <div class="satrap-block__icon-wrap">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22,4 12,14.01 9,11.01"/>
+            </svg>
+          </div>
+        </div>
+        <div class="satrap-block__content">
+          <span class="satrap-block__tag">اصل پنجم</span>
+          <div class="satrap-block__letter">ا</div>
+          <h3 class="satrap-block__title">ایمنی <strong>اول</strong></h3>
+          <p class="satrap-block__desc">
+            سابقه‌ای درخشان بدون حادثه در کارگاه‌های ما. تمام فرآیندهای ساخت و نصب زیر نظر مستقیم کارشناسان HSE اجرا می‌شود.
+          </p>
+          <div class="satrap-block__progress">
+            <div class="satrap-block__progress-bar">
+              <div class="satrap-block__progress-fill" style="--progress: 100%"></div>
+            </div>
+            <span class="satrap-block__progress-label">صفر حادثه در ۵ سال</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Block 6: پ - پایداری -->
+      <div class="satrap-block reveal" data-progress="88">
+        <div class="satrap-block__content">
+          <span class="satrap-block__tag">اصل ششم</span>
+          <div class="satrap-block__letter">پ</div>
+          <h3 class="satrap-block__title">پایداری <strong>محیطی</strong></h3>
+          <p class="satrap-block__desc">
+            ساتراپ فلز با استفاده از ضایعات بازیافتی و روش‌های تولید کم‌کربن، متعهد به ساخت سازه‌هایی است که آینده زمین را نیز در نظر دارند.
+          </p>
+          <div class="satrap-block__progress">
+            <div class="satrap-block__progress-bar">
+              <div class="satrap-block__progress-fill" style="--progress: 88%"></div>
+            </div>
+            <span class="satrap-block__progress-label">۸۸٪ فولاد بازیافتی</span>
+          </div>
+        </div>
+        <div class="satrap-block__visual">
+          <div class="satrap-block__bg"></div>
+          <div class="satrap-block__letter-bg">پ</div>
+          <div class="satrap-block__icon-wrap">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22V12m0 0C12 6 7 3 3 3c0 7 4 12 9 12zm0 0c0-6 5-9 9-9-1 7-5 12-9 12"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ========== PROJECTS ========== -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <div class="projects__header">
+        <div>
+          <div class="section-label reveal">کارنامه ما</div>
+          <h2 class="section-title reveal reveal-delay-1">پروژه‌های <span>اخیر</span></h2>
+        </div>
+        <a href="projects.html" class="projects__view-all reveal reveal-delay-2">
+          مشاهده همه
+          <svg viewBox="0 0 24 24"><polyline points="15,18 9,12 15,6"/></svg>
+        </a>
+      </div>
+
+      <div class="projects__grid">
+
+        <div class="project-card reveal">
+          <div class="project-card__visual">
+            <svg style="width:70%;opacity:0.2;" viewBox="0 0 300 180" fill="none" stroke="white" stroke-width="1">
+              <line x1="30" y1="20" x2="30" y2="160"/><line x1="150" y1="10" x2="150" y2="160"/>
+              <line x1="270" y1="20" x2="270" y2="160"/>
+              <line x1="25" y1="20" x2="275" y2="20"/><line x1="25" y1="60" x2="275" y2="60"/>
+              <line x1="25" y1="100" x2="275" y2="100"/><line x1="25" y1="140" x2="275" y2="140"/>
+              <line x1="30" y1="20" x2="150" y2="60"/><line x1="150" y1="20" x2="30" y2="60"/>
+              <line x1="150" y1="60" x2="270" y2="100"/><line x1="270" y1="60" x2="150" y2="100"/>
+            </svg>
+          </div>
+          <div class="project-card__overlay">
+            <div class="project-card__cat">سازه صنعتی</div>
+            <div class="project-card__name">مجتمع صنعتی پارس — اصفهان</div>
+            <div class="project-card__meta">۸۵۰۰ متر مربع · ۲۴ ماه اجرا</div>
+          </div>
+          <div class="project-card__arrow">
+            <svg viewBox="0 0 24 24"><polyline points="15,18 9,12 15,6"/></svg>
+          </div>
+        </div>
+
+        <div class="project-card reveal reveal-delay-1">
+          <div class="project-card__visual">
+            <svg style="width:60%;opacity:0.2;" viewBox="0 0 200 200" fill="none" stroke="white" stroke-width="1">
+              <rect x="40" y="40" width="120" height="140"/><line x1="40" y1="80" x2="160" y2="80"/>
+              <line x1="40" y1="120" x2="160" y2="120"/><line x1="100" y1="40" x2="100" y2="180"/>
+              <line x1="40" y1="40" x2="100" y2="10"/><line x1="160" y1="40" x2="100" y2="10"/>
+              <circle cx="100" cy="10" r="5" fill="white"/>
+            </svg>
+          </div>
+          <div class="project-card__overlay">
+            <div class="project-card__cat">ساختمان اداری</div>
+            <div class="project-card__name">برج فولاد تهران</div>
+            <div class="project-card__meta">۱۸ طبقه · ۱۲۰۰۰ تن فولاد</div>
+          </div>
+          <div class="project-card__arrow">
+            <svg viewBox="0 0 24 24"><polyline points="15,18 9,12 15,6"/></svg>
+          </div>
+        </div>
+
+        <div class="project-card reveal reveal-delay-2">
+          <div class="project-card__visual">
+            <svg style="width:60%;opacity:0.2;" viewBox="0 0 200 200" fill="none" stroke="white" stroke-width="1">
+              <ellipse cx="100" cy="100" rx="80" ry="60"/><ellipse cx="100" cy="100" rx="60" ry="40"/>
+              <line x1="20" y1="100" x2="180" y2="100"/><line x1="100" y1="40" x2="100" y2="160"/>
+            </svg>
+          </div>
+          <div class="project-card__overlay">
+            <div class="project-card__cat">پوشش فلزی</div>
+            <div class="project-card__name">سقف ورزشگاه شیراز</div>
+            <div class="project-card__meta">دهانه ۱۲۰ متری</div>
+          </div>
+          <div class="project-card__arrow">
+            <svg viewBox="0 0 24 24"><polyline points="15,18 9,12 15,6"/></svg>
+          </div>
+        </div>
+
+        <div class="project-card reveal reveal-delay-1">
+          <div class="project-card__visual">
+            <svg style="width:55%;opacity:0.2;" viewBox="0 0 180 200" fill="none" stroke="white" stroke-width="1">
+              <line x1="20" y1="180" x2="20" y2="40"/><line x1="90" y1="180" x2="90" y2="20"/>
+              <line x1="160" y1="180" x2="160" y2="40"/>
+              <line x1="15" y1="40" x2="165" y2="40"/><line x1="15" y1="80" x2="165" y2="80"/>
+              <line x1="15" y1="120" x2="165" y2="120"/>
+              <line x1="20" y1="40" x2="90" y2="80"/><line x1="90" y1="40" x2="20" y2="80"/>
+            </svg>
+          </div>
+          <div class="project-card__overlay">
+            <div class="project-card__cat">انبار صنعتی</div>
+            <div class="project-card__name">انبار لجستیک ماهشهر</div>
+            <div class="project-card__meta">۲۲۰۰۰ متر مربع</div>
+          </div>
+          <div class="project-card__arrow">
+            <svg viewBox="0 0 24 24"><polyline points="15,18 9,12 15,6"/></svg>
+          </div>
+        </div>
+
+        <div class="project-card reveal reveal-delay-2">
+          <div class="project-card__visual">
+            <svg style="width:55%;opacity:0.2;" viewBox="0 0 180 200" fill="none" stroke="white" stroke-width="1">
+              <polygon points="90,10 170,180 10,180"/>
+              <line x1="90" y1="10" x2="90" y2="180"/>
+              <line x1="50" y1="95" x2="130" y2="95"/>
+              <line x1="70" y1="52" x2="90" y2="10"/><line x1="110" y1="52" x2="90" y2="10"/>
+            </svg>
+          </div>
+          <div class="project-card__overlay">
+            <div class="project-card__cat">سازه خاص</div>
+            <div class="project-card__name">سایبان فلزی میدان مرکزی</div>
+            <div class="project-card__meta">طراحی سفارشی · تبریز</div>
+          </div>
+          <div class="project-card__arrow">
+            <svg viewBox="0 0 24 24"><polyline points="15,18 9,12 15,6"/></svg>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+ <!-- ========== CLIENTS GRID ========== -->
+<section class="clients" id="clients">
+  <div class="container">
+
+    <div class="clients__header reveal">
+      <div class="section-label">مورد اعتماد برترین‌ها</div>
+      <h2 class="section-title">شرکای تجاری <span>ساتراپ</span></h2>
+      <p class="clients__sub">بیش از ۱۲۰ شرکت معتبر داخلی و بین‌المللی به کیفیت سازه‌های ما اعتماد کرده‌اند.</p>
+    </div>
+
+    <div class="clients__stats reveal reveal-delay-1">
+      <div class="clients__stat">
+        <div class="clients__stat-num">۱۲۰+</div>
+        <div class="clients__stat-lbl">شرکت شریک</div>
+      </div>
+      <div class="clients__stat">
+        <div class="clients__stat-num">۱۸</div>
+        <div class="clients__stat-lbl">استان کشور</div>
+      </div>
+      <div class="clients__stat">
+        <div class="clients__stat-num">۹۶٪</div>
+        <div class="clients__stat-lbl">تمدید قرارداد</div>
+      </div>
+    </div>
+
+    <div class="clients__grid">
+
+      <div class="client-card client-card--featured reveal">
+        <div class="client-card__mark"><svg viewBox="0 0 28 28" fill="none" stroke="white" stroke-width="1.5"><rect x="4" y="4" width="20" height="20" rx="4"/><line x1="14" y1="4" x2="14" y2="24"/></svg></div>
+        <div class="client-card__name">فولاد مبارکه اصفهان</div>
+        <div class="client-card__sector">فولادسازی</div>
+      </div>
+
+      <div class="client-card reveal reveal-delay-1">
+        <div class="client-card__mark"><svg viewBox="0 0 28 28" fill="none" stroke="white" stroke-width="1.5"><circle cx="14" cy="14" r="9"/><line x1="14" y1="5" x2="14" y2="23"/><line x1="5" y1="14" x2="23" y2="14"/></svg></div>
+        <div class="client-card__name">گروه صنعتی ایران‌خودرو</div>
+        <div class="client-card__sector">خودروسازی</div>
+      </div>
+
+      <div class="client-card reveal reveal-delay-2">
+        <div class="client-card__mark"><svg viewBox="0 0 28 28" fill="none" stroke="white" stroke-width="1.5"><polygon points="14,4 24,24 4,24" stroke-linejoin="round"/></svg></div>
+        <div class="client-card__name">پتروشیمی پارس</div>
+        <div class="client-card__sector">پتروشیمی</div>
+      </div>
+
+      <div class="client-card reveal reveal-delay-3">
+        <div class="client-card__mark"><svg viewBox="0 0 28 28" fill="none" stroke="white" stroke-width="1.5"><rect x="4" y="12" width="20" height="12" rx="2"/><path d="M8 12V9a6 6 0 0112 0v3"/></svg></div>
+        <div class="client-card__name">راه‌آهن جمهوری اسلامی</div>
+        <div class="client-card__sector">حمل‌ونقل</div>
+      </div>
+
+      <div class="client-card reveal">
+        <div class="client-card__mark"><svg viewBox="0 0 28 28" fill="none" stroke="white" stroke-width="1.5"><path d="M14 4L24 10L24 20L14 26L4 20L4 10Z"/></svg></div>
+        <div class="client-card__name">مپنا گروه</div>
+        <div class="client-card__sector">انرژی</div>
+      </div>
+
+      <div class="client-card reveal reveal-delay-1">
+        <div class="client-card__mark"><svg viewBox="0 0 28 28" fill="none" stroke="white" stroke-width="1.5"><line x1="4" y1="24" x2="14" y2="4"/><line x1="14" y1="4" x2="24" y2="24"/><line x1="7" y1="16" x2="21" y2="16"/></svg></div>
+        <div class="client-card__name">توسعه صنعتی ایران</div>
+        <div class="client-card__sector">صنعت</div>
+      </div>
+
+      <div class="client-card reveal reveal-delay-2">
+        <div class="client-card__mark"><svg viewBox="0 0 28 28" fill="none" stroke="white" stroke-width="1.5"><circle cx="14" cy="14" r="9"/><circle cx="14" cy="14" r="4"/></svg></div>
+        <div class="client-card__name">نیروگاه سیکل ترکیبی</div>
+        <div class="client-card__sector">نیروگاه</div>
+      </div>
+
+      <div class="client-card reveal reveal-delay-3">
+        <span class="client-card__badge">جدید</span>
+        <div class="client-card__mark"><svg viewBox="0 0 28 28" fill="none" stroke="white" stroke-width="1.5"><rect x="4" y="4" width="9" height="9"/><rect x="15" y="4" width="9" height="9"/><rect x="4" y="15" width="9" height="9"/><rect x="15" y="15" width="9" height="9"/></svg></div>
+        <div class="client-card__name">صنایع فلزی سپاهان</div>
+        <div class="client-card__sector">فلزکاری</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer__grid">
+
+        <!-- Brand -->
+        <div class="footer__brand">
+          <div class="footer__brand-logo">
+            <div class="footer__brand-logo-mark">
+              <svg viewBox="0 0 24 24" fill="white"><path d="M3 21h18M3 7l9-4 9 4M4 7v14M20 7v14M8 7v14M16 7v14M12 3v18M8 11h8M8 15h8"/></svg>
+            </div>
+            <div>
+              <div class="footer__brand-name">ساتراپ فلز</div>
+              <div class="footer__brand-sub">Satrap Felez Co.</div>
+            </div>
+          </div>
+          <p class="footer__tagline">
+            سازنده آینده‌ای پایدار با فولاد، از ایران برای جهان.
+          </p>
+          <div class="footer__social">
+            <!-- Instagram -->
+            <a href="#" aria-label="اینستاگرام">
+              <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <!-- LinkedIn -->
+            <a href="#" aria-label="لینکدین">
+              <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <!-- Telegram -->
+            <a href="#" aria-label="تلگرام">
+              <svg viewBox="0 0 24 24"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+            </a>
+            <!-- WhatsApp -->
+            <a href="#" aria-label="واتساپ">
+              <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <div class="footer__col-title">دسترسی سریع</div>
+          <ul class="footer__links">
+            <li><a href="#storytelling">درباره ساتراپ</a></li>
+            <li><a href="#projects">پروژه‌های ما</a></li>
+            <li><a href="#clients">مشتریان</a></li>
+            <li><a href="#">گواهینامه‌ها</a></li>
+            <li><a href="#">وبلاگ مهندسی</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <div class="footer__col-title">خدمات ما</div>
+          <ul class="footer__links">
+            <li><a href="#">طراحی سازه فولادی</a></li>
+            <li><a href="#">ساخت و فابریکاسیون</a></li>
+            <li><a href="#">نصب و برپاسازی</a></li>
+            <li><a href="#">سقف‌های صنعتی</a></li>
+            <li><a href="#">مشاوره فنی</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <div class="footer__col-title">ارتباط با ما</div>
+
+          <div class="footer__contact-item">
+            <div class="footer__contact-icon">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.62A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+            </div>
+            <div>
+              <div class="footer__contact-label">تلفن تماس</div>
+              <div class="footer__contact-val" style="direction:ltr; text-align:right;">۰۳۱ - ۳۴۵۶۷۸۹۰</div>
+            </div>
+          </div>
+
+          <div class="footer__contact-item">
+            <div class="footer__contact-icon">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <div class="footer__contact-label">ایمیل</div>
+              <div class="footer__contact-val" style="direction:ltr; text-align:right;">info@satrapfelez.ir</div>
+            </div>
+          </div>
+
+          <div class="footer__contact-item">
+            <div class="footer__contact-icon">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div class="footer__contact-label">دفتر مرکزی</div>
+              <div class="footer__contact-val">تهران</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">
+          © ۱۴۰۴ تمامی حقوق برای <strong>ساتراپ فلز</strong> محفوظ است.
+        </p>
+        <div class="footer__badges">
+          <span class="footer__badge">ISO 9001</span>
+          <span class="footer__badge">HSE رتبه یک</span>
+          <span class="footer__badge">CE Certified</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<script src="custom.js"></script>
+</body>
+</html>
