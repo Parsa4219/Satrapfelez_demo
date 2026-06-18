@@ -80,7 +80,7 @@
 .cs-hero__bg {
   position: absolute; inset: 0; z-index: 0;
   background:
-    url('images/concrete-hero.jpg') center / cover no-repeat,
+    url('images/concrete_bg.png') center / cover no-repeat,
     linear-gradient(155deg, #3D2D10 0%, #1A1208 50%, #0A0804 100%);
   transform: scale(1.03);
 }
